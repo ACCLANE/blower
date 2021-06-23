@@ -1,0 +1,44 @@
+{
+	"rules": {
+		"indentation": "tab",
+		"string-quotes": "single",
+		"color-hex-case": "upper",
+		"color-no-invalid-hex": true,
+		"font-family-no-duplicate-names": true,
+		"font-family-no-missing-generic-family-keyword": true,
+		"function-calc-no-unspaced-operator": true,
+		"function-linear-gradient-no-nonstandard-direction": true,
+		"string-no-newline": true,
+		"unit-no-unknown": true,
+		"property-no-unknown": true,
+		"selector-combinator-space-after": "always",
+		"selector-combinator-space-before": "always",
+		"selector-attribute-quotes": "always",
+		"selector-attribute-operator-space-before": "never",
+		"selector-attribute-operator-space-after": "never",
+		"selector-attribute-brackets-space-inside": "never",
+		"declaration-block-trailing-semicolon": "always",
+		"declaration-colon-space-before": "never",
+		"declaration-colon-space-after": "always-single-line",
+		"declaration-colon-newline-after": "always-multi-line",
+		"number-leading-zero": "never",
+		"function-url-quotes": "always",
+		"font-family-name-quotes": "always-where-required",
+		"comment-whitespace-inside": "always",
+		"comment-empty-line-before": "always",
+		"rule-empty-line-before": ["always-multi-line", {
+			"ignore": ["after-comment"]
+		}],
+		"selector-pseudo-element-colon-notation": "double",
+		"media-feature-colon-space-before": "never",
+		"media-feature-colon-space-after": "always",
+		"selector-type-case": "lower",
+		"comment-no-empty": true,
+		"declaration-block-no-duplicate-properties": [true, {
+			"ignore": ["consecutive-duplicates-with-different-values"]
+		}],
+		"block-opening-brace-space-before": "always",
+		"unit-case": "lower",
+		"length-zero-no-unit": true
+	}
+}
