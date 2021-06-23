@@ -1,0 +1,35 @@
+@use 'sass:map';
+@use 'sass:list';
+
+@use '../variables/structure' as structure;
+
+@mixin breakpoint($breakpoint, $direction: 'min') {
+
+	// Error handling
+	$validDirection: (min, max);
+
+	// Gebe einen Fehler aus wenn die Breakpointrichtung nicht stimmt
+	@if not list.index($validDirection, $direction) {
+		@error '❌  ===> #{$direction} is not a valite option for direction. Please use: #{$validDirection}';
+	}
+
+	// Gebe einen Fehler aus wenn es den Breakpoint nicht in der Map gibt
+	@if map.has-key(structure.$breakpoints, $breakpoint) != true {
+		@error '❌  ===> #{$breakpoint} is not valid breakpoint. Please use: #{map.keys(structure.$breakpoints)}';
+	}
+
+	// Suche und gebe den Key aus der Breakpoints Map wieder
+	$getBreakpoints: map.get(structure.$breakpoints, $breakpoint);
+
+	@if $direction == 'min' {
+		@media (min-width: $getBreakpoints) {
+			@content;
+		}
+	}
+
+	@if $direction == 'max' {
+		@media (max-width: ($getBreakpoints - 1)) {
+			@content;
+		}
+	}
+}

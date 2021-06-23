@@ -1,0 +1,27 @@
+/**
+ * Verwendet die aspect-ratio CSS-Eigenschaft
+ * in modernen Browsern, bietet aber einen
+ * Fallback für ältere Browser an
+ *
+ * @param Number $width
+ * @param Number $height
+ */
+@mixin aspect-ratio($width: 1, $height: 1) {
+	aspect-ratio: unquote('#{$width} / #{$height}');
+
+	@supports not (aspect-ratio: unquote('#{$width} / #{$height}')) {
+		position: relative;
+		height: 0;
+		padding-bottom: calc(#{$height} / #{$width} * 100%);
+
+		& > * {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

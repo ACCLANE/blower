@@ -1,0 +1,11 @@
+/**
+ * Dreht den Wert eines übergebenen Wertes
+ * um, mit dem CSS rechnen kann.
+ * Aus 50% wird z.B. -50%.
+ *
+ * @param Number $var
+ * @returns String — Berechneter Wert der Variable
+ */
+@function negate($var) {
+	@return calc(#{$var} * -1);
+}

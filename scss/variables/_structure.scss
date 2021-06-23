@@ -1,0 +1,13 @@
+// Breakpoint Map
+$breakpoints: (
+	'xxs':	375px,	// Smartphone Portrait
+	'xs':	568px,	// Smartphone Landscape
+	'sm':	768px,	// Tablet Portrait
+	'md':	1024px,	// Tablet Landscape
+	'lg':	1260px,	// Kleinerer Desktop
+	'xl':	1440px,	// Widescreen
+	'fhd':	1920px,	// Full HD
+) !default;
+
+$width-content: 1230px;
+$width-narrow: 920px;
