@@ -1,0 +1,51 @@
+@use '../variables/fonts' as font;
+@use '../variables/colors' as color;
+@use '../functions' as fn;
+
+table {
+	--color-border: #{color.$gray-200};
+	--spacing-after: #{fn.spacing(2)};
+
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: var(--spacing-after);
+	border-collapse: collapse;
+
+	caption {
+		font-weight: 600;
+		font-size: font.$headline-s;
+		text-align: left;
+		margin-bottom: fn.spacing(.5);
+	}
+
+	thead,
+	tfoot {
+		--divider: 3px solid var(--color-border);
+
+		th {
+			vertical-align: bottom;
+			text-align: left;
+		}
+	}
+
+	thead {
+
+		th {
+			border-bottom: var(--divider);
+		}
+	}
+
+	tfoot {
+
+		th {
+			border-top: var(--divider);
+			border-bottom-width: 0;
+		}
+	}
+
+	td, th {
+		padding: .75rem;
+		vertical-align: top;
+		border-bottom: 1px solid var(--color-border);
+	}
+}

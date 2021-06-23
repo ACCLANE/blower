@@ -15,6 +15,7 @@ ol, ul {
 
 	& & {
 		--spacing-indentation: #{fn.spacing(2)};
+		--spacing-after: 0;
 	}
 
 	li {

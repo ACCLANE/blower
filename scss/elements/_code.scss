@@ -1,0 +1,35 @@
+@use '../functions' as fn;
+@use '../variables/base' as base;
+@use '../variables/colors' as color;
+
+code {
+	--color-background: #{color.$gray-200};
+	--spacing-inner: #{fn.spacing(.5)};
+
+	background-color: var(--color-background);
+	border-radius: base.$corner-radius;
+	padding: var(--spacing-inner);
+
+	pre & {
+		--spacing-inner: #{fn.spacing(2)};
+
+		display: block;
+		width: max-content;
+		max-width: 100%;
+	}
+}
+
+pre {
+	tab-size: 4;
+}
+
+kbd {
+	border-radius: 3px;
+	padding: fn.spacing(.25) fn.spacing();
+	box-shadow: 1px 1px 2px color.$gray-500;
+	margin: 2px;
+	vertical-align: text-bottom;
+	background: color.$gray-200;
+	font-weight: 500;
+	letter-spacing: 1px;
+}

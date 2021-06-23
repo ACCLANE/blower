@@ -2,6 +2,9 @@
 /**
  * Linkfarben
  */
+/**
+ * Graustufen
+ */
 * {
   margin: 0;
   padding: 0;
@@ -40,6 +43,35 @@ body {
  * @param Number $multiplier
  * @returns String — Wert in Pixeln
  */
+code {
+  --color-background: #e9ecef;
+  --spacing-inner: 0.25rem;
+  background-color: var(--color-background);
+  border-radius: 4px;
+  padding: var(--spacing-inner);
+}
+pre code {
+  --spacing-inner: 1rem;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+}
+
+pre {
+  tab-size: 4;
+}
+
+kbd {
+  border-radius: 3px;
+  padding: 0.125rem 0.5rem;
+  box-shadow: 1px 1px 2px #adb5bd;
+  margin: 2px;
+  vertical-align: text-bottom;
+  background: #e9ecef;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   --spacing-after: 0.5rem;
   margin-bottom: var(--spacing-after);
@@ -67,6 +99,12 @@ h5 {
 
 h6 {
   font-size: 18px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /**
@@ -113,6 +151,7 @@ ol, ul {
 }
 ol ol, ol ul, ul ol, ul ul {
   --spacing-indentation: 1rem;
+  --spacing-after: 0;
 }
 ol li:not(:last-child), ul li:not(:last-child) {
   margin-bottom: var(--spacing-list-items);
@@ -126,6 +165,42 @@ dl {
 }
 dl dt {
   font-weight: 600;
+}
+
+table {
+  --color-border: #e9ecef;
+  --spacing-after: 1rem;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: var(--spacing-after);
+  border-collapse: collapse;
+}
+table caption {
+  font-weight: 600;
+  font-size: 24px;
+  text-align: left;
+  margin-bottom: 0.25rem;
+}
+table thead,
+table tfoot {
+  --divider: 3px solid var(--color-border);
+}
+table thead th,
+table tfoot th {
+  vertical-align: bottom;
+  text-align: left;
+}
+table thead th {
+  border-bottom: var(--divider);
+}
+table tfoot th {
+  border-top: var(--divider);
+  border-bottom-width: 0;
+}
+table td, table th {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-border);
 }
 
 p {
@@ -147,5 +222,3 @@ blockquote {
   padding: var(--spacing-inner);
   border-left: var(--border-width) var(--border-style) var(--border-color);
 }
-
-/*# sourceMappingURL=blower.css.map */
