@@ -1,3 +1,13 @@
-$theme: #019fe3;
+$theme: #019fe3 !default;
+$theme-dark: darken($theme, 10%);
 
-$text: #133324;
+$text: #133324 !default;
+
+/**
+ * Linkfarben
+ */
+$link-default: 		$theme !default;
+$link-visited: 		$theme-dark !default;
+$link-hover: 		$text !default;
+$link-focus: 		$text !default;
+$link-active: 		#000 !default;
