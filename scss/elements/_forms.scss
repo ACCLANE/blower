@@ -1,0 +1,36 @@
+@use '../functions' as fn;
+@use '../variables/fonts' as font;
+
+input, button, textarea, select {
+	--spacing-inner: #{fn.spacing(.5)};
+
+	padding: var(--spacing-inner);
+	font-family: font.$primary;
+	font-size: 1rem;
+
+	&:disabled {
+		cursor: not-allowed;
+	}
+}
+
+button, input[type='submit'], input[type='button'], input[type='reset'] {
+
+	&:not(:disabled) {
+		cursor: pointer;
+	}
+}
+
+fieldset {
+	--spacing-after: #{fn.spacing(2)};
+	--spacing-inner: #{fn.spacing(2)};
+	--spacing-legend: calc(var(--spacing-inner) / 2);
+
+	padding: var(--spacing-inner);
+	margin-bottom: var(--spacing-after);
+
+	legend {
+		font-weight: 600;
+		padding: 0 var(--spacing-legend);
+		margin-left: fn.negate(var(--spacing-legend));
+	}
+}

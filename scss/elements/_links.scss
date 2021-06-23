@@ -17,7 +17,7 @@ a {
 		--color: #{color.$link-hover};
 	}
 
-	&:focus {
+	&:focus-visible {
 		--color: #{color.$link-focus};
 	}
 
