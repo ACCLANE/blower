@@ -1,0 +1,32 @@
+@use '../variables/fonts' as font;
+@use '../functions' as fn;
+
+h1, h2, h3, h4, h5, h6 {
+	--spacing-after: #{fn.spacing()};
+
+	margin-bottom: var(--spacing-after);
+}
+
+h1 {
+	font-size: font.$headline-xl;
+}
+
+h2 {
+	font-size: font.$headline-l;
+}
+
+h3 {
+	font-size: font.$headline-m;
+}
+
+h4 {
+	font-size: font.$headline-s;
+}
+
+h5 {
+	font-size: font.$text-xl;
+}
+
+h6 {
+	font-size: font.$text-l;
+}

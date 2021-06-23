@@ -1,0 +1,26 @@
+@use '../functions' as fn;
+@use '../variables/colors' as color;
+
+p {
+	--spacing-after: #{fn.spacing()};
+
+	&:not(:last-child) {
+		margin-bottom: var(--spacing-after);
+	}
+}
+
+blockquote {
+	--spacing-indentation: #{fn.spacing(2)};
+	--spacing-inner: #{fn.spacing(1.5)};
+	--spacing-after: #{fn.spacing(2)};
+	--border-width: 5px;
+	--border-style: solid;
+	--border-color: #{color.$theme};
+
+	margin: {
+		left: var(--spacing-indentation);
+		bottom: var(--spacing-after);
+	}
+	padding: var(--spacing-inner);
+	border-left: var(--border-width) var(--border-style) var(--border-color);
+}

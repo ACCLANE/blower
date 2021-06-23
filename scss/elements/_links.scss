@@ -1,0 +1,27 @@
+@use '../variables/colors' as color;
+@use '../variables/transitions' as transition;
+
+a {
+	color: var(--color);
+	transition: color transition.$transition-speed-fast;
+
+	&:link {
+		--color: #{color.$link-default};
+	}
+
+	&:visited {
+		--color: #{color.$link-visited};
+	}
+
+	&:hover {
+		--color: #{color.$link-hover};
+	}
+
+	&:focus {
+		--color: #{color.$link-focus};
+	}
+
+	&:active {
+		--color: #{color.$link-active};
+	}
+}

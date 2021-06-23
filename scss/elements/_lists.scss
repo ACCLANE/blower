@@ -1,0 +1,38 @@
+@use '../functions' as fn;
+@use '../mixins' as mx;
+
+dl, ol, ul {
+	--spacing-after: #{fn.spacing(2)};
+
+	margin-bottom: var(--spacing-after);
+}
+
+ol, ul {
+	--spacing-indentation: #{fn.spacing(4)};
+	--spacing-list-items: #{fn.spacing(.5)};
+
+	padding-left: var(--spacing-indentation);
+
+	& & {
+		--spacing-indentation: #{fn.spacing(2)};
+	}
+
+	li {
+
+		&:not(:last-child) {
+			margin-bottom: var(--spacing-list-items);
+		}
+	}
+}
+
+dl {
+	--spacing: #{fn.spacing()};
+
+	display: grid;
+	grid-template-columns: max-content 2fr;
+	gap: var(--spacing);
+
+	dt {
+		font-weight: 600;
+	}
+}

@@ -1,3 +1,7 @@
+@charset "UTF-8";
+/**
+ * Linkfarben
+ */
 * {
   margin: 0;
   padding: 0;
@@ -19,3 +23,129 @@ body {
   background-color: #019fe3;
   color: #FFF;
 }
+
+/**
+ * Dreht den Wert eines übergebenen Wertes
+ * um, mit dem CSS rechnen kann.
+ * Aus 50% wird z.B. -50%.
+ *
+ * @param Number $var
+ * @returns String — Berechneter Wert der Variable
+ */
+/**
+ * Spacing Funktion, um nur mit einer Variable arbeiten
+ * zu müssen, die man beliebig per Multiplier
+ * erhöhen oder senken kann
+ *
+ * @param Number $multiplier
+ * @returns String — Wert in Pixeln
+ */
+h1, h2, h3, h4, h5, h6 {
+  --spacing-after: 0.5rem;
+  margin-bottom: var(--spacing-after);
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+/**
+ * Geschwindigkeit von Transitions
+ * Basierend auf den Richtlinien für Material Design https://material.io/design/motion/speed.html#duration
+ */
+a {
+  color: var(--color);
+  transition: color 200ms;
+}
+a:link {
+  --color: #019fe3;
+}
+a:visited {
+  --color: #017bb0;
+}
+a:hover {
+  --color: #133324;
+}
+a:focus {
+  --color: #133324;
+}
+a:active {
+  --color: #000;
+}
+
+/**
+ * Verwendet die aspect-ratio CSS-Eigenschaft
+ * in modernen Browsern, bietet aber einen
+ * Fallback für ältere Browser an
+ *
+ * @param Number $width
+ * @param Number $height
+ */
+dl, ol, ul {
+  --spacing-after: 1rem;
+  margin-bottom: var(--spacing-after);
+}
+
+ol, ul {
+  --spacing-indentation: 2rem;
+  --spacing-list-items: 0.25rem;
+  padding-left: var(--spacing-indentation);
+}
+ol ol, ol ul, ul ol, ul ul {
+  --spacing-indentation: 1rem;
+}
+ol li:not(:last-child), ul li:not(:last-child) {
+  margin-bottom: var(--spacing-list-items);
+}
+
+dl {
+  --spacing: 0.5rem;
+  display: grid;
+  grid-template-columns: max-content 2fr;
+  gap: var(--spacing);
+}
+dl dt {
+  font-weight: 600;
+}
+
+p {
+  --spacing-after: 0.5rem;
+}
+p:not(:last-child) {
+  margin-bottom: var(--spacing-after);
+}
+
+blockquote {
+  --spacing-indentation: 1rem;
+  --spacing-inner: 0.75rem;
+  --spacing-after: 1rem;
+  --border-width: 5px;
+  --border-style: solid;
+  --border-color: #019fe3;
+  margin-left: var(--spacing-indentation);
+  margin-bottom: var(--spacing-after);
+  padding: var(--spacing-inner);
+  border-left: var(--border-width) var(--border-style) var(--border-color);
+}
+
+/*# sourceMappingURL=blower.css.map */
