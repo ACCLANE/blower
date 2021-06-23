@@ -1,0 +1,11 @@
+### Sass template
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
