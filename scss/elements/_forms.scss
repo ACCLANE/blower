@@ -1,32 +1,79 @@
 @use '../functions' as fn;
+@use '../variables/base' as base;
 @use '../variables/fonts' as font;
+@use '../variables/colors' as color;
+@use '../variables/transitions' as transition;
 
 input, button, textarea, select {
-	--spacing-inner: #{fn.spacing(.5)};
+	--spacing-inner: #{fn.spacing(.75)};
+	--color-border: #{color.$gray-600};
 
 	padding: var(--spacing-inner);
 	font-family: font.$primary;
 	font-size: 1rem;
+	border-radius: base.$corner-radius;
+	box-shadow: 0 0 0 1px transparent;
+	transition-property: border-color, color, background-color, box-shadow;
+	transition-duration: transition.$transition-speed-fast;
+
+	&:not([type='file']) {
+		border: 1px solid var(--color-border);
+		outline: none;
+
+		&:focus-visible {
+			--color-border: #{color.$theme};
+
+			box-shadow: 0 0 0 1px var(--color-border);
+		}
+	}
 
 	&:disabled {
 		cursor: not-allowed;
 	}
 }
 
-button, input[type='submit'], input[type='button'], input[type='reset'] {
+button, input[type='submit'], input[type='button'], input[type='reset'], input[type='color'] {
+	--color-border: #{color.$gray-400};
+	--color-background: #{color.$gray-200};
+
+	background-color: var(--color-background);
 
 	&:not(:disabled) {
 		cursor: pointer;
+
+		&:hover {
+			--color-background: #{color.$gray-400};
+		}
+
+		&:focus-visible {
+			--color-border: #{color.$gray-500};
+			--color-background: #{color.$gray-400};
+		}
+
+		&:active {
+			--color-border: #{color.$gray-600};
+			--color-background: #{color.$gray-500};
+
+			transition-duration: transition.$transition-speed-instant;
+		}
 	}
+}
+
+input[type='color'] {
+	padding: 0;
 }
 
 fieldset {
 	--spacing-after: #{fn.spacing(2)};
 	--spacing-inner: #{fn.spacing(2)};
 	--spacing-legend: calc(var(--spacing-inner) / 2);
+	--color-border: #{color.$gray-200};
+	--width-border: 2px;
+	--style-border: solid;
 
 	padding: var(--spacing-inner);
 	margin-bottom: var(--spacing-after);
+	border: var(--width-border) var(--style-border) var(--color-border);
 
 	legend {
 		font-weight: 600;

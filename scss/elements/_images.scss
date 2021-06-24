@@ -1,5 +1,16 @@
+@use '../functions' as fn;
 img {
 	max-width: 100%;
 	height: auto;
 	display: block;
+}
+
+figure {
+	--spacing-after: #{fn.spacing(2)};
+
+	margin-bottom: var(--spacing-after);
+
+	figcaption {
+		margin-top: calc(var(--spacing-after) / 4);
+	}
 }
