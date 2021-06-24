@@ -4,7 +4,9 @@
 dl, ol, ul {
 	--spacing-after: #{fn.spacing(2)};
 
-	margin-bottom: var(--spacing-after);
+	&:not(:last-child) {
+		margin-bottom: var(--spacing-after);
+	}
 }
 
 ol, ul {

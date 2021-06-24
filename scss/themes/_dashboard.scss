@@ -1,0 +1,8 @@
+@use '../functions' as fn;
+@use '../variables/colors' as color;
+
+.blower--dashboard {
+	display: grid;
+	grid-template-columns: 300px 1fr;
+	min-height: 100vh;
+}

@@ -1,0 +1,37 @@
+@use '../functions' as fn;
+@use '../mixins' as mx;
+@use '../variables/base' as base;
+@use '../variables/transitions' as transition;
+@use '../variables/colors' as color;
+
+.c-list-navigation {
+	@include mx.reset-list();
+
+	--spacing-inner: #{fn.spacing()};
+
+	margin: {
+		left: fn.negate(var(--spacing-inner));
+		right: fn.negate(var(--spacing-inner));
+	};
+
+	&__item {
+
+	}
+
+	&__link {
+		--color-link-background: transparent;
+
+		display: block;
+		padding: calc(var(--spacing-inner) / 1.25) var(--spacing-inner);
+		color: var(--color-link, color.$link-default);
+		background-color: var(--color-link-background);
+		text-decoration: none;
+		border-radius: base.$corner-radius;
+		transition-property: color, background-color;
+		transition-duration: transition.$transition-speed-fast;
+
+		&:hover {
+			--color-link-background: rgba(0, 0, 0, .2);
+		}
+	}
+}

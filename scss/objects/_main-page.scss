@@ -1,0 +1,22 @@
+@use '../functions' as fn;
+@use '../variables/colors' as color;
+@use '../variables/fonts' as font;
+
+.o-main-page {
+	--spacing-content-horizontal: #{fn.spacing(3)};
+	--spacing-content-vertical: #{fn.spacing(1.5)};
+
+	& > * {
+		padding: var(--spacing-content-vertical) var(--spacing-content-horizontal);
+	}
+
+	&__header {
+		display: flex;
+		border-bottom: 1px solid color.$gray-200;
+		margin-bottom: calc(var(--spacing-content-vertical) / 2);
+
+		&-search {
+			margin-left: auto;
+		}
+	}
+}

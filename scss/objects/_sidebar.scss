@@ -1,0 +1,41 @@
+@use '../functions' as fn;
+@use '../variables/colors' as color;
+@use '../variables/fonts' as font;
+
+.o-sidebar {
+	--spacing-content-horizontal: #{fn.spacing(3)};
+	--spacing-content-vertical: #{fn.spacing(1.5)};
+	--color-background: #{color.$gray-800};
+	--color-background-header: #{color.$gray-900};
+	--color-text: rgba(255, 255, 255, .9);
+	--color-link: #FFF;
+
+	background-color: var(--color-background);
+	color: var(--color-text);
+
+	& > * {
+		padding: var(--spacing-content-vertical) var(--spacing-content-horizontal);
+	}
+
+	&__header {
+		background-color: var(--color-background-header);
+		margin-bottom: calc(var(--spacing-content-vertical) / 2);
+	}
+
+	&__title {
+		--spacing-after: 0;
+
+		font-size: font.$headline-s;
+	}
+
+	&__section {
+
+		&-header {
+			--spacing-after: #{fn.spacing(.5)};
+
+			font-size: font.$text-m;
+			text-transform: uppercase;
+			color: var(--color-text);
+		}
+	}
+}
