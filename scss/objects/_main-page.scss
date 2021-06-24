@@ -18,5 +18,20 @@
 		&-search {
 			margin-left: auto;
 		}
+
+		&-icons {
+			display: flex;
+
+			a {
+
+				&:link {
+					--color: #{color.$link-hover};
+				}
+
+				&:hover {
+					--color: #{color.$link-default};
+				}
+			}
+		}
 	}
 }

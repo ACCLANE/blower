@@ -170,7 +170,7 @@ h6 {
   font-size: 18px;
 }
 
-img {
+img, svg {
   max-width: 100%;
   height: auto;
   display: block;
@@ -317,6 +317,10 @@ blockquote {
   transition-property: color, background-color;
   transition-duration: 200ms;
 }
+.c-list-navigation__link.is-active {
+  --color-link-background: rgba(255, 255, 255, .08);
+  font-weight: 600;
+}
 .c-list-navigation__link:hover {
   --color-link-background: rgba(0, 0, 0, .2);
 }
@@ -335,6 +339,15 @@ blockquote {
 }
 .o-main-page__header-search {
   margin-left: auto;
+}
+.o-main-page__header-icons {
+  display: flex;
+}
+.o-main-page__header-icons a:link {
+  --color: #133324;
+}
+.o-main-page__header-icons a:hover {
+  --color: #019fe3;
 }
 
 .o-sidebar {
