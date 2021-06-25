@@ -7,6 +7,7 @@
 .c-button {
 	--spacing-inner-vertical: #{fn.spacing()};
 	--spacing-inner-horizontal: calc(var(--spacing-inner-vertical) * 2);
+	--size-font: 1rem;
 	--width-border: 1px;
 	--style-border: solid;
 	--color-text: #{color.$gray-900};
@@ -27,7 +28,7 @@
 	border: var(--width-border) var(--style-border) var(--color-border);
 	background-color: var(--color-background);
 	border-radius: base.$corner-radius;
-	font-size: 1rem;
+	font-size: var(--size-font);
 	font-family: font.$primary;
 	font-weight: 500;
 	box-shadow: 0 0 0 2px transparent;
@@ -57,6 +58,11 @@
 			background-color: var(--color-active-background);
 			transition-duration: transition.$transition-speed-instant;
 		}
+	}
+
+	&:disabled {
+		opacity: .7;
+		cursor: not-allowed;
 	}
 
 	&--primary {
@@ -93,5 +99,24 @@
 		--color-text: #FFF;
 		--color-border: #117c8d;
 		--color-background: #17a2b8;
+	}
+
+	&--outline {
+		--color-hover-background: var(--color-background);
+		--color-hover-border: var(--color-hover-background);
+		--width-border: 1px;
+
+		background-color: transparent;
+		color: var(--color-border);
+	}
+
+	&--large {
+		--spacing-inner-vertical: #{fn.spacing(1.25)};
+		--size-font: 1.2rem;
+	}
+
+	&--small {
+		--spacing-inner-vertical: #{fn.spacing(.5)};
+		--size-font: .8rem;
 	}
 }

@@ -52,6 +52,7 @@ kbd {
 .c-button, button, input[type=submit], input[type=button], input[type=reset], input[type=color] {
   --spacing-inner-vertical: 0.5rem;
   --spacing-inner-horizontal: calc(var(--spacing-inner-vertical) * 2);
+  --size-font: 1rem;
   --width-border: 1px;
   --style-border: solid;
   --color-text: #212529;
@@ -71,7 +72,7 @@ kbd {
   border: var(--width-border) var(--style-border) var(--color-border);
   background-color: var(--color-background);
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: var(--size-font);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: 500;
   box-shadow: 0 0 0 2px transparent;
@@ -98,6 +99,10 @@ kbd {
   border: var(--width-border) var(--style-border) var(--color-active-border);
   background-color: var(--color-active-background);
   transition-duration: 100ms;
+}
+.c-button:disabled, button:disabled, input[type=submit]:disabled, input[type=button]:disabled, input[type=reset]:disabled, input[type=color]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 .c-button--primary {
   --color-text: #FFF;
@@ -128,6 +133,21 @@ kbd {
   --color-text: #FFF;
   --color-border: #117c8d;
   --color-background: #17a2b8;
+}
+.c-button--outline {
+  --color-hover-background: var(--color-background);
+  --color-hover-border: var(--color-hover-background);
+  --width-border: 1px;
+  background-color: transparent;
+  color: var(--color-border);
+}
+.c-button--large {
+  --spacing-inner-vertical: 0.625rem;
+  --size-font: 1.2rem;
+}
+.c-button--small {
+  --spacing-inner-vertical: 0.25rem;
+  --size-font: .8rem;
 }
 
 input, textarea, select {
