@@ -3,8 +3,9 @@
 @use '../variables/fonts' as font;
 @use '../variables/colors' as color;
 @use '../variables/transitions' as transition;
+@use '../components/button';
 
-input, button, textarea, select {
+input, textarea, select {
 	--spacing-inner: #{fn.spacing(.75)};
 	--color-border: #{color.$gray-600};
 
@@ -33,30 +34,10 @@ input, button, textarea, select {
 }
 
 button, input[type='submit'], input[type='button'], input[type='reset'], input[type='color'] {
-	--color-border: #{color.$gray-400};
-	--color-background: #{color.$gray-200};
+	@extend .c-button;
 
-	background-color: var(--color-background);
-
-	&:not(:disabled) {
-		cursor: pointer;
-
-		&:hover {
-			--color-background: #{color.$gray-400};
-		}
-
-		&:focus-visible {
-			--color-border: #{color.$gray-500};
-			--color-background: #{color.$gray-400};
-		}
-
-		&:active {
-			--color-border: #{color.$gray-600};
-			--color-background: #{color.$gray-500};
-
-			transition-duration: transition.$transition-speed-instant;
-		}
-	}
+	--spacing-inner-vertical: #{fn.spacing(.75)};
+	--spacing-inner-horizontal: calc(var(--spacing-inner-vertical) * 2);
 }
 
 input[type='color'] {

@@ -1,0 +1,97 @@
+@use '../functions' as fn;
+@use '../variables/base' as base;
+@use '../variables/fonts' as font;
+@use '../variables/colors' as color;
+@use '../variables/transitions' as transition;
+
+.c-button {
+	--spacing-inner-vertical: #{fn.spacing()};
+	--spacing-inner-horizontal: calc(var(--spacing-inner-vertical) * 2);
+	--width-border: 1px;
+	--style-border: solid;
+	--color-text: #{color.$gray-900};
+	--color-border: #{color.$gray-400};
+	--color-background: #{color.$gray-200};
+	--color-hover-text: var(--color-text);
+	--color-hover-border: var(--color-border);
+	--color-hover-background: var(--color-border);
+	--color-focus-text: var(--color-text);
+	--color-focus-border: var(--color-border);
+	--color-focus-background: var(--color-background);
+	--color-active-text: #FFF;
+	--color-active-border: #{color.$gray-900};
+	--color-active-background: #{color.$gray-800};
+
+	padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+	color: var(--color-text);
+	border: var(--width-border) var(--style-border) var(--color-border);
+	background-color: var(--color-background);
+	border-radius: base.$corner-radius;
+	font-size: 1rem;
+	font-family: font.$primary;
+	font-weight: 500;
+	box-shadow: 0 0 0 2px transparent;
+	outline: none;
+	transition-property: border-color, color, background-color, box-shadow;
+	transition-duration: transition.$transition-speed-fast;
+
+	&:not(:disabled) {
+		cursor: pointer;
+
+		&:hover {
+			color: var(--color-hover-text);
+			border: var(--width-border) var(--style-border) var(--color-hover-border);
+			background-color: var(--color-hover-background);
+		}
+
+		&:focus-visible {
+			color: var(--color-focus-text);
+			border: var(--width-border) var(--style-border) var(--color-focus-border);
+			background-color: var(--color-focus-background);
+			box-shadow: 0 0 0 2px var(--color-focus-border);
+		}
+
+		&:active {
+			color: var(--color-active-text);
+			border: var(--width-border) var(--style-border) var(--color-active-border);
+			background-color: var(--color-active-background);
+			transition-duration: transition.$transition-speed-instant;
+		}
+	}
+
+	&--primary {
+		--color-text: #FFF;
+		--color-border: #{color.$theme-dark};
+		--color-background: #{color.$theme};
+	}
+
+	&--secondary {
+		--color-text: #FFF;
+		--color-border: #{color.$gray-700};
+		--color-background: #{color.$gray-600};
+	}
+
+	&--success {
+		--color-text: #FFF;
+		--color-border: #115a38;
+		--color-background: #198754;
+	}
+
+	&--danger {
+		--color-text: #FFF;
+		--color-border: #a91e2c;
+		--color-background: #dc3545;
+	}
+
+	&--warning {
+		--color-text: #000;
+		--color-border: #e09900;
+		--color-background: #ffc107;
+	}
+
+	&--info {
+		--color-text: #FFF;
+		--color-border: #117c8d;
+		--color-background: #17a2b8;
+	}
+}

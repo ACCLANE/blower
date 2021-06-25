@@ -5,18 +5,14 @@ $theme-dark: color.adjust($theme, $lightness: -10%);
 
 $text: #133324 !default;
 
-/**
- * Linkfarben
- */
+// Linkfarben
 $link-default: 		$theme !default;
 $link-visited: 		$theme-dark !default;
 $link-hover: 		$text !default;
 $link-focus: 		$text !default;
 $link-active: 		#000 !default;
 
-/**
- * Graustufen
- */
+// Graustufen
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;

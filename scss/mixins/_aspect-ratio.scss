@@ -1,11 +1,9 @@
-/**
- * Verwendet die aspect-ratio CSS-Eigenschaft
- * in modernen Browsern, bietet aber einen
- * Fallback für ältere Browser an
- *
- * @param Number $width
- * @param Number $height
- */
+/// Verwendet die aspect-ratio CSS-Eigenschaft
+/// in modernen Browsern, bietet aber einen
+/// Fallback für ältere Browser an
+///
+/// @param Number $width
+/// @param Number $height
 @mixin aspect-ratio($width: 1, $height: 1) {
 	aspect-ratio: unquote('#{$width} / #{$height}');
 
