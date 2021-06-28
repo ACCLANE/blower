@@ -1,0 +1,64 @@
+@use '../functions' as fn;
+@use '../variables/colors' as color;
+@use '../variables/base' as base;
+
+.c-alert {
+	--spacing-inner-vertical: #{fn.spacing(1.5)};
+	--spacing-inner-horizontal: calc(var(--spacing-inner-vertical) * 1.25);
+	--spacing-outer-vertical: #{fn.spacing(1.5)};
+	--spacing-outer-horizontal: 0;
+	--size-font: 1rem;
+	--width-border: 1px;
+	--style-border: solid;
+	--color-text: #{color.$gray-900};
+	--color-border: #{color.$gray-400};
+	--color-background: #{color.$gray-200};
+
+	padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+	margin: var(--spacing-outer-vertical) var(--spacing-outer-horizontal);
+	color: var(--color-text);
+	border: var(--width-border) var(--style-border) var(--color-border);
+	background-color: var(--color-background);
+	border-radius: base.$corner-radius;
+	font-size: var(--size-font);
+
+	a {
+		color: var(--color-text);
+		text-decoration: underline;
+		font-weight: 500;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&--primary {
+		--color-text: #084298;
+		--color-border: #b6d4fe;
+		--color-background: #cfe2ff;
+	}
+
+	&--success {
+		--color-text: #0f5132;
+		--color-border: #badbcc;
+		--color-background: #d1e7dd;
+	}
+
+	&--danger {
+		--color-text: #842029;
+		--color-border: #f5c2c7;
+		--color-background: #f8d7da;
+	}
+
+	&--warning {
+		--color-text: #664d03;
+		--color-border: #ffecb5;
+		--color-background: #fff3cd;
+	}
+
+	&--info {
+		--color-text: #055160;
+		--color-border: #b6effb;
+		--color-background: #cff4fc;
+	}
+}
