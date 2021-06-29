@@ -79,6 +79,7 @@ kbd {
   outline: none;
   transition-property: border-color, color, background-color, box-shadow;
   transition-duration: 200ms;
+  text-decoration: none;
 }
 .c-button:not(:disabled), button:not(:disabled), input[type=submit]:not(:disabled), input[type=button]:not(:disabled), input[type=reset]:not(:disabled), input[type=color]:not(:disabled) {
   cursor: pointer;
