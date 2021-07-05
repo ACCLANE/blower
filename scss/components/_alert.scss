@@ -15,12 +15,20 @@
 	--color-background: #{color.$gray-200};
 
 	padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
-	margin: var(--spacing-outer-vertical) var(--spacing-outer-horizontal);
+	margin: 0 var(--spacing-outer-horizontal);
 	color: var(--color-text);
 	border: var(--width-border) var(--style-border) var(--color-border);
 	background-color: var(--color-background);
 	border-radius: base.$corner-radius;
 	font-size: var(--size-font);
+
+	&:not(:first-child) {
+		margin-top: var(--spacing-outer-vertical);
+	}
+
+	&:not(:last-child) {
+		margin-bottom: var(--spacing-outer-vertical);
+	}
 
 	a {
 		color: var(--color-text);
@@ -30,6 +38,10 @@
 		&:hover {
 			text-decoration: none;
 		}
+	}
+
+	&__icon {
+		margin-right: var(--spacing-inner-vertical);
 	}
 
 	&--primary {
@@ -60,5 +72,10 @@
 		--color-text: #055160;
 		--color-border: #b6effb;
 		--color-background: #cff4fc;
+	}
+
+	&.has-icon {
+		display: flex;
+		align-items: center;
 	}
 }

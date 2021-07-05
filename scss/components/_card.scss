@@ -8,17 +8,19 @@
 	--spacing-elements: #{fn.spacing()};
 	--color-background: #FFF;
 	--color-text: #{color.$text};
+	--color-text-footer: #{color.$gray-600};
 	--color-border: #{color.$gray-300};
 	--width-border: 1px;
 	--style-border: solid;
 	--size-headline: #{font.$text-xl};
 	--size-text: #{font.$text-m};
+	--corner-radius: #{base.$corner-radius};
 
 	padding: var(--spacing-inner);
 	color: var(--color-text);
 	border: var(--width-border) var(--style-border) var(--color-border);
 	background-color: var(--color-background);
-	border-radius: base.$corner-radius;
+	border-radius: var(--corner-radius);
 	max-width: max-content;
 
 	&__image,
@@ -31,7 +33,9 @@
 		}
 	}
 
-	&__image {}
+	&__image {
+		border-radius: calc(var(--corner-radius) * .75);
+	}
 
 	&__title {
 		line-height: 1.15;
@@ -40,5 +44,10 @@
 
 	&__text {
 		font-size: var(--size-text);
+	}
+
+	&__footer {
+		font-size: calc(var(--size-text) * .75);
+		color: var(--color-text-footer);
 	}
 }

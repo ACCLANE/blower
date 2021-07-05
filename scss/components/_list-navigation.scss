@@ -7,7 +7,7 @@
 .c-list-navigation {
 	@include mx.reset-list();
 
-	--spacing-inner: #{fn.spacing()};
+	--spacing-inner: #{fn.spacing(1.5)};
 
 	margin: {
 		left: fn.negate(var(--spacing-inner));
