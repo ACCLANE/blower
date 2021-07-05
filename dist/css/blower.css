@@ -80,6 +80,7 @@ kbd {
   transition-property: border-color, color, background-color, box-shadow;
   transition-duration: 200ms;
   text-decoration: none;
+  display: inline-block;
 }
 .c-button:not(:disabled), button:not(:disabled), input[type=submit]:not(:disabled), input[type=button]:not(:disabled), input[type=reset]:not(:disabled), input[type=color]:not(:disabled) {
   cursor: pointer;
@@ -400,6 +401,34 @@ blockquote {
   --color-text: #055160;
   --color-border: #b6effb;
   --color-background: #cff4fc;
+}
+
+.c-card {
+  --spacing-inner: 0.75rem;
+  --spacing-elements: 0.5rem;
+  --color-background: #FFF;
+  --color-text: #133324;
+  --color-border: #dee2e6;
+  --width-border: 1px;
+  --style-border: solid;
+  --size-headline: 20px;
+  --size-text: 16px;
+  padding: var(--spacing-inner);
+  color: var(--color-text);
+  border: var(--width-border) var(--style-border) var(--color-border);
+  background-color: var(--color-background);
+  border-radius: 4px;
+  max-width: max-content;
+}
+.c-card__image:not(:last-child), .c-card__title:not(:last-child), .c-card__text:not(:last-child), .c-card__body:not(:last-child) {
+  margin-bottom: var(--spacing-elements);
+}
+.c-card__title {
+  line-height: 1.15;
+  font-size: var(--size-headline);
+}
+.c-card__text {
+  font-size: var(--size-text);
 }
 
 .c-list-navigation {

@@ -36,6 +36,7 @@
 	transition-property: border-color, color, background-color, box-shadow;
 	transition-duration: transition.$transition-speed-fast;
 	text-decoration: none;
+	display: inline-block;
 
 	&:not(:disabled) {
 		cursor: pointer;

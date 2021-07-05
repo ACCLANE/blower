@@ -1,0 +1,44 @@
+@use '../functions' as fn;
+@use '../variables/base' as base;
+@use '../variables/colors' as color;
+@use '../variables/fonts' as font;
+
+.c-card {
+	--spacing-inner: #{fn.spacing(1.5)};
+	--spacing-elements: #{fn.spacing()};
+	--color-background: #FFF;
+	--color-text: #{color.$text};
+	--color-border: #{color.$gray-300};
+	--width-border: 1px;
+	--style-border: solid;
+	--size-headline: #{font.$text-xl};
+	--size-text: #{font.$text-m};
+
+	padding: var(--spacing-inner);
+	color: var(--color-text);
+	border: var(--width-border) var(--style-border) var(--color-border);
+	background-color: var(--color-background);
+	border-radius: base.$corner-radius;
+	max-width: max-content;
+
+	&__image,
+	&__title,
+	&__text,
+	&__body {
+
+		&:not(:last-child) {
+			margin-bottom: var(--spacing-elements);
+		}
+	}
+
+	&__image {}
+
+	&__title {
+		line-height: 1.15;
+		font-size: var(--size-headline);
+	}
+
+	&__text {
+		font-size: var(--size-text);
+	}
+}
