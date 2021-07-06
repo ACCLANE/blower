@@ -1,5 +1,4 @@
 @use '../functions' as fn;
-@use '../mixins' as mx;
 
 dl, ol, ul {
 	--spacing-after: #{fn.spacing(2)};
