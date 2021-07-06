@@ -3,14 +3,29 @@
 
 @use '../variables/structure' as structure;
 
+/// Breakpoint Mixin was vorher definierte Breakpoints (Map) nutzt und validiert
+/// @param {String} $breakpoint Breakpoint key von der breakpoints map
+/// @param {String} $direction ['min'] Richtung des @media Queries (min oder max)
+/// @group Breakpoint
+///
+/// @example
+///		.my-selector {
+///			@include breakpoint(lg) {...}
+///		}
+///
+/// @example css - Output CSS
+///		@media (min-width: 1260px) {
+///			.my-selector {...}
+///		}
+///
 @mixin breakpoint($breakpoint, $direction: 'min') {
 
 	// Error handling
-	$validDirection: (min, max);
+	$valid-direction: (min, max);
 
 	// Gebe einen Fehler aus wenn die Breakpointrichtung nicht stimmt
-	@if not list.index($validDirection, $direction) {
-		@error '❌  ===> #{$direction} is not a valite option for direction. Please use: #{$validDirection}';
+	@if not list.index($valid-direction, $direction) {
+		@error '❌  ===> #{$direction} is not a valite option for direction. Please use: #{$valid-direction}';
 	}
 
 	// Gebe einen Fehler aus wenn es den Breakpoint nicht in der Map gibt
@@ -19,16 +34,16 @@
 	}
 
 	// Suche und gebe den Key aus der Breakpoints Map wieder
-	$getBreakpoints: map.get(structure.$breakpoints, $breakpoint);
+	$get-breakpoints: map.get(structure.$breakpoints, $breakpoint);
 
 	@if $direction == 'min' {
-		@media (min-width: $getBreakpoints) {
+		@media (min-width: $get-breakpoints) {
 			@content;
 		}
 	}
 
 	@if $direction == 'max' {
-		@media (max-width: ($getBreakpoints - 1)) {
+		@media (max-width: ($get-breakpoints - 1)) {
 			@content;
 		}
 	}
