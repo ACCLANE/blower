@@ -1,6 +1,6 @@
 @use 'sass:color';
 
-$theme: #019fe3 !default;
+$theme: #019FE3 !default;
 $theme-dark: color.adjust($theme, $lightness: -10%);
 
 $text: #133324 !default;
@@ -13,12 +13,12 @@ $link-focus: 		$text !default;
 $link-active: 		#000 !default;
 
 // Graustufen
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
+$gray-100: #F8F9FA !default;
+$gray-200: #E9ECEF !default;
+$gray-300: #DEE2E6 !default;
+$gray-400: #CED4DA !default;
+$gray-500: #ADB5BD !default;
+$gray-600: #6C757D !default;
 $gray-700: #495057 !default;
-$gray-800: #343a40 !default;
+$gray-800: #343A40 !default;
 $gray-900: #212529 !default;
