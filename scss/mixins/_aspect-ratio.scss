@@ -1,3 +1,5 @@
+@use 'sass:string';
+
 /// Verwendet die aspect-ratio CSS-Eigenschaft
 /// in modernen Browsern, bietet aber einen
 /// Fallback für ältere Browser an
@@ -5,9 +7,9 @@
 /// @param Number $width
 /// @param Number $height
 @mixin aspect-ratio($width: 1, $height: 1) {
-	aspect-ratio: unquote('#{$width} / #{$height}');
+	aspect-ratio: string.unquote('#{$width} / #{$height}');
 
-	@supports not (aspect-ratio: unquote('#{$width} / #{$height}')) {
+	@supports not (aspect-ratio: string.unquote('#{$width} / #{$height}')) {
 		position: relative;
 		height: 0;
 		padding-bottom: calc(#{$height} / #{$width} * 100%);
