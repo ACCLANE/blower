@@ -1,11 +1,11 @@
 @use '../functions' as fn;
-@use '../mixins' as mx;
+@use '../placeholders';
 @use '../variables/base';
 @use '../variables/transition';
 @use '../variables/color';
 
 .c-list-navigation {
-	@include mx.reset-list();
+	@extend %reset-list;
 
 	--spacing-inner: #{fn.spacing(1.5)};
 
