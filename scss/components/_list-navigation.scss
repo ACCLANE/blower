@@ -1,8 +1,8 @@
 @use '../functions' as fn;
 @use '../mixins' as mx;
-@use '../variables/base' as base;
-@use '../variables/transitions' as transition;
-@use '../variables/colors' as color;
+@use '../variables/base';
+@use '../variables/transition';
+@use '../variables/color';
 
 .c-list-navigation {
 	@include mx.reset-list();
@@ -28,7 +28,7 @@
 		text-decoration: none;
 		border-radius: base.$corner-radius;
 		transition-property: color, background-color;
-		transition-duration: transition.$transition-speed-fast;
+		transition-duration: transition.$speed-fast;
 
 		&.is-active {
 			--color-link-background: rgba(255, 255, 255, .08);

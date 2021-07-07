@@ -1,9 +1,9 @@
-@use '../variables/colors' as color;
-@use '../variables/transitions' as transition;
+@use '../variables/color';
+@use '../variables/transition';
 
 a {
 	color: var(--color);
-	transition: color transition.$transition-speed-fast;
+	transition: color transition.$speed-fast;
 
 	&:link {
 		--color: #{color.$link-default};

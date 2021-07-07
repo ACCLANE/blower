@@ -1,6 +1,6 @@
 @use '../functions' as fn;
-@use '../variables/colors' as color;
-@use '../variables/fonts' as font;
+@use '../variables/color' as color;
+@use '../variables/font' as font;
 
 .o-sidebar {
 	--spacing-content-horizontal: #{fn.spacing(3)};

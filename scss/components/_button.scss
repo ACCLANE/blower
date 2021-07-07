@@ -2,9 +2,9 @@
 
 @use '../functions' as fn;
 @use '../variables/base';
-@use '../variables/fonts' as font;
-@use '../variables/colors' as color;
-@use '../variables/transitions' as transition;
+@use '../variables/font';
+@use '../variables/color';
+@use '../variables/transition';
 
 $button-types: (
 	'primary',
@@ -48,7 +48,7 @@ $button-types: (
 	box-shadow: 0 0 0 2px transparent;
 	outline: none;
 	transition-property: border-color, color, background-color, box-shadow;
-	transition-duration: transition.$transition-speed-fast;
+	transition-duration: transition.$speed-fast;
 	text-decoration: none;
 	display: inline-block;
 
@@ -72,7 +72,7 @@ $button-types: (
 			color: var(--color-active-text);
 			border: var(--width-border) var(--style-border) var(--color-active-border);
 			background-color: var(--color-active-background);
-			transition-duration: transition.$transition-speed-instant;
+			transition-duration: transition.$speed-instant;
 		}
 	}
 

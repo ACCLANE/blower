@@ -1,7 +1,7 @@
 @use '../functions' as fn;
-@use '../variables/base' as base;
-@use '../variables/colors' as color;
-@use '../variables/fonts' as font;
+@use '../variables/base';
+@use '../variables/color';
+@use '../variables/font';
 
 .c-card {
 	--spacing-inner: #{fn.spacing(1.5)};

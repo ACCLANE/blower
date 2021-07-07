@@ -1,8 +1,8 @@
 @use '../functions' as fn;
-@use '../variables/base' as base;
-@use '../variables/fonts' as font;
-@use '../variables/colors' as color;
-@use '../variables/transitions' as transition;
+@use '../variables/base';
+@use '../variables/font';
+@use '../variables/color';
+@use '../variables/transition';
 @use '../components/button';
 
 input, textarea, select {
@@ -15,7 +15,7 @@ input, textarea, select {
 	border-radius: base.$corner-radius;
 	box-shadow: 0 0 0 1px transparent;
 	transition-property: border-color, color, background-color, box-shadow;
-	transition-duration: transition.$transition-speed-fast;
+	transition-duration: transition.$speed-fast;
 
 	&:not([type='file']) {
 		border: 1px solid var(--color-border);

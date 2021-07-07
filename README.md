@@ -16,3 +16,11 @@ Ordner für Mixins, Functions, Variables, Utilites je mit eigener Datei pro Segm
 
 ## Repository-Regeln
 Vor jedem Commit wird einmal `npm run prod` ausgeführt, damit immer eine lauffähige Version im Repository ist.
+
+## Sass support
+
+| Sass Compiler | Support |
+| ------------- | ------- |
+| Dart Sass     | ✅      |
+| Lib Sass      | ❌      |
+| Ruby Sass     | ⚰️      |

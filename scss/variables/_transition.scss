@@ -1,0 +1,7 @@
+/// Geschwindigkeit von Transitions
+/// Basierend auf den Richtlinien für Material Design https://material.io/design/motion/speed.html#duration
+$speed-instant:			100ms !default; // z.B. für Schalter
+$speed-fast:			200ms !default; // z.B. für Farbübergänge etc
+$speed:					300ms !default; // z.B. für transform und Co
+$speed-slow:			400ms !default; // z.B. für detaillierte Animationen
+$speed-slow-fade-out:	1000ms !default; // z.B. für Situationen, in denen etwas langsam ausfaden soll
