@@ -658,6 +658,115 @@ blockquote {
   --color-link-background: rgba(0, 0, 0, .2);
 }
 
+.c-tooltip {
+  --color-background: #F8F9FA;
+  --color-border: #CED4DA;
+  --color-text: #212529;
+  --width-border: 1px;
+  --spacing-inner-vertical: 0.5rem;
+  --spacing-inner-horizontal: calc(var(--spacing-inner-vertical) * 2);
+  --spacing-to-parent: 0.5rem;
+  --style-border: solid;
+  --size-triangle: 7px;
+  --opacity: 0;
+  background-color: var(--color-background);
+  border: var(--width-border) var(--style-border) var(--color-border);
+  position: absolute;
+  padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+  opacity: var(--opacity);
+  transition: opacity 400ms;
+  color: var(--color-text);
+}
+.c-tooltip::after, .c-tooltip::before {
+  width: 0;
+  height: 0;
+  content: "";
+  position: absolute;
+}
+.c-tooltip--top, .c-tooltip--right, .c-tooltip--bottom, .c-tooltip--left {
+  transform: translate(var(--translate-triangle));
+  top: var(--position-top-triangle);
+}
+.c-tooltip--top {
+  --position-top-triangle: 0;
+  --translate-triangle: -50%, calc(-100% - var(--spacing-to-parent) - var(--size-triangle));
+  left: 50%;
+}
+.c-tooltip--top::after, .c-tooltip--top::before {
+  bottom: calc(-1 * var(--size-triangle));
+  left: 50%;
+  transform: translateX(-50%);
+  border-right: var(--size-triangle) solid transparent;
+  border-left: var(--size-triangle) solid transparent;
+}
+.c-tooltip--top::before {
+  border-top: var(--size-triangle) solid var(--color-border);
+}
+.c-tooltip--top::after {
+  border-top: var(--size-triangle) solid var(--color-background);
+  margin-bottom: 1px;
+}
+.c-tooltip--right {
+  --position-top-triangle: 50%;
+  --translate-triangle: calc(100% + var(--spacing-to-parent) + var(--size-triangle)), -50%;
+  right: 0;
+}
+.c-tooltip--right::after, .c-tooltip--right::before {
+  left: calc(-1 * var(--size-triangle));
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: var(--size-triangle) solid transparent;
+  border-bottom: var(--size-triangle) solid transparent;
+}
+.c-tooltip--right::before {
+  border-right: var(--size-triangle) solid var(--color-border);
+}
+.c-tooltip--right::after {
+  border-right: var(--size-triangle) solid var(--color-background);
+  margin-left: 1px;
+}
+.c-tooltip--bottom {
+  --position-top-triangle: 0;
+  --translate-triangle: -50%, calc(100% + var(--spacing-to-parent) + var(--size-triangle));
+  left: 50%;
+}
+.c-tooltip--bottom::after, .c-tooltip--bottom::before {
+  top: calc(-1 * var(--size-triangle));
+  left: 50%;
+  transform: translateX(-50%);
+  border-right: var(--size-triangle) solid transparent;
+  border-left: var(--size-triangle) solid transparent;
+}
+.c-tooltip--bottom::before {
+  border-bottom: var(--size-triangle) solid var(--color-border);
+}
+.c-tooltip--bottom::after {
+  border-bottom: var(--size-triangle) solid var(--color-background);
+  margin-top: 1px;
+}
+.c-tooltip--left {
+  --position-top-triangle: 50%;
+  --translate-triangle: calc(-100% - var(--spacing-to-parent) - var(--size-triangle)), -50%;
+  left: 0;
+}
+.c-tooltip--left::after, .c-tooltip--left::before {
+  right: calc(-1 * var(--size-triangle));
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: var(--size-triangle) solid transparent;
+  border-bottom: var(--size-triangle) solid transparent;
+}
+.c-tooltip--left::before {
+  border-left: var(--size-triangle) solid var(--color-border);
+}
+.c-tooltip--left::after {
+  border-left: var(--size-triangle) solid var(--color-background);
+  margin-right: 1px;
+}
+.c-tooltip.is-active {
+  --opacity: 1;
+}
+
 .o-main-page {
   --spacing-content-horizontal: 1.5rem;
   --spacing-content-vertical: 0.75rem;
