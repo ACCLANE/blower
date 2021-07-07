@@ -1,0 +1,21 @@
+/// Wenn einmal mit with() geladen lässt sich diese Datei nicht einweiteres mal umkonfiguieren
+/// Einmal eingebunden wird jede Nutztung des Blower Breakpoint mixins mit diesen configs geladen
+@use '../scss/variables/structure' as structure with (
+	$breakpoints: (
+		'xxs':	375px,	// Smartphone Portrait
+		'xs':	568px,	// Smartphone Landscape
+		'sm':	768px,	// Tablet Portrait
+		'md':	1024px,	// Tablet Landscape
+		'lg':	1234px,	// Kleinerer Desktop - Vom Framework veränderter Breakpoint!
+		'xl':	1440px,	// Widescreen
+		'fhd':	1920px,	// Full HD
+		'test':	9999px, // Neuer Breakpoint
+	),
+);
+@use '../scss/mixins' as mix;
+
+.test-breakpoint {
+	@include mix.breakpoint(lg) {
+		padding: 12px;
+	}
+}

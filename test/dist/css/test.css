@@ -1,0 +1,121 @@
+@media (min-width: 1234px) {
+  .test-breakpoint {
+    padding: 12px;
+  }
+}
+
+@media (min-width: 1234px) {
+  .component-xyz {
+    margin-top: 16px;
+  }
+}
+@media (min-width: 9999px) {
+  .component-xyz__custom-breakpoint {
+    background-color: #fff;
+  }
+}
+
+.c-button {
+  --spacing-inner-vertical: 0.5rem;
+  --spacing-inner-horizontal: calc(var(--spacing-inner-vertical) * 2);
+  --size-font: 1rem;
+  --width-border: 1px;
+  --style-border: solid;
+  --color-text: #212529;
+  --color-border: #CED4DA;
+  --color-background: #E9ECEF;
+  --color-hover-text: var(--color-text);
+  --color-hover-border: var(--color-border);
+  --color-hover-background: var(--color-border);
+  --color-focus-text: var(--color-text);
+  --color-focus-border: var(--color-border);
+  --color-focus-background: var(--color-background);
+  --color-active-text: #FFF;
+  --color-active-border: #212529;
+  --color-active-background: #343A40;
+  padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+  color: var(--color-text);
+  border: var(--width-border) var(--style-border) var(--color-border);
+  background-color: var(--color-background);
+  border-radius: 4px;
+  font-size: var(--size-font);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  box-shadow: 0 0 0 2px transparent;
+  outline: none;
+  transition-property: border-color, color, background-color, box-shadow;
+  transition-duration: 200ms;
+  text-decoration: none;
+  display: inline-block;
+}
+.c-button:not(:disabled) {
+  cursor: pointer;
+}
+.c-button:not(:disabled):hover {
+  color: var(--color-hover-text);
+  border: var(--width-border) var(--style-border) var(--color-hover-border);
+  background-color: var(--color-hover-background);
+}
+.c-button:not(:disabled):focus-visible {
+  color: var(--color-focus-text);
+  border: var(--width-border) var(--style-border) var(--color-focus-border);
+  background-color: var(--color-focus-background);
+  box-shadow: 0 0 0 2px var(--color-focus-border);
+}
+.c-button:not(:disabled):active {
+  color: var(--color-active-text);
+  border: var(--width-border) var(--style-border) var(--color-active-border);
+  background-color: var(--color-active-background);
+  transition-duration: 100ms;
+}
+.c-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.c-button--primary {
+  --color-text: #FFF;
+  --color-border: #017bb0;
+  --color-background: #019FE3;
+}
+.c-button--secondary {
+  --color-text: #FFF;
+  --color-border: #495057;
+  --color-background: #6C757D;
+}
+.c-button--success {
+  --color-text: #FFF;
+  --color-border: #115A38;
+  --color-background: #198754;
+}
+.c-button--danger {
+  --color-text: #FFF;
+  --color-border: #A91E2C;
+  --color-background: #DC3545;
+}
+.c-button--warning {
+  --color-text: #000;
+  --color-border: #E09900;
+  --color-background: #FFC107;
+}
+.c-button--info {
+  --color-text: #FFF;
+  --color-border: #117C8D;
+  --color-background: #17A2B8;
+}
+.c-button--outline {
+  --color-hover-background: var(--color-background);
+  --color-hover-border: var(--color-hover-background);
+  --width-border: 1px;
+  background-color: transparent;
+  color: var(--color-border);
+}
+.c-button--large {
+  --spacing-inner-vertical: 0.625rem;
+  --size-font: 1.2rem;
+}
+.c-button--small {
+  --spacing-inner-vertical: 0.25rem;
+  --size-font: .8rem;
+}
+
+/*# sourceMappingURL=test.css.map */

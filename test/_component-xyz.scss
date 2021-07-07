@@ -1,0 +1,17 @@
+//@use 'breakpoint' as break;
+@use '../scss/mixins' as mix;
+
+/// Die Componente nutzt weiterhin das breakpoint mixin von Blower
+/// Allerdings werden veränderte die Breakpoints genutzt
+/// in _breakpoints.scss wird die dafür zuständige structure.scss mit with() angepasst
+.component-xyz {
+	@include mix.breakpoint(lg) {
+		margin-top: 16px;
+	}
+	
+	&__custom-breakpoint {
+		@include mix.breakpoint(test) {
+			background-color: #fff;
+		}
+	}
+}

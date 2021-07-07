@@ -11,11 +11,12 @@
 	"private": true,
 	"scripts": {
 		"copyToDocs": "rm -rf docs/public/css/* && cp -Rf dist/css/* docs/public/css",
-		"watch": "sass scss/blower.scss dist/css/blower.css --watch",
+		"watch": "sass --watch scss:dist/css",
 		"build": "sass scss/blower.scss dist/css/blower.css && npm run copyToDocs",
 		"prod": "sass scss/blower.scss dist/css/blower.css --no-source-map && sass scss/blower.scss dist/css/blower.min.css --no-source-map --style compressed && npm run copyToDocs",
 		"lint": "stylelint '**/*.scss'",
-		"lint-fix": "stylelint '**/*.scss' --fix"
+		"lint-fix": "stylelint '**/*.scss' --fix",
+		"test": "sass test/test.scss test/dist/css/test.css"
 	},
 	"devDependencies": {
 		"sass": "^1.35.1",

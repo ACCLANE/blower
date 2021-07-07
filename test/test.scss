@@ -1,0 +1,23 @@
+@use 'breakpoint';
+@use 'component-xyz';
+
+@use '../scss/components/button';
+
+//@use '../scss/variables/structure' as structure with (
+//	$breakpoints: (
+//		'xxs':	375px,	// Smartphone Portrait
+//		'xs':	568px,	// Smartphone Landscape
+//		'sm':	768px,	// Tablet Portrait
+//		'md':	1024px,	// Tablet Landscape
+//		'lg':	1324px,	// Kleinerer Desktop
+//		'xl':	1440px,	// Widescreen
+//		'fhd':	1920px,	// Full HD
+//	),
+//);
+//@use '../scss/mixins' as mix;
+//
+//.test-breakpoint-2 {
+//	@include mix.breakpoint(fhd) {
+//		padding: 2px;
+//	}
+//}
