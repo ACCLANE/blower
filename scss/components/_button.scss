@@ -1,8 +1,22 @@
+@use 'sass:list';
+
 @use '../functions' as fn;
-@use '../variables/base' as base;
+@use '../variables/base';
 @use '../variables/fonts' as font;
 @use '../variables/colors' as color;
 @use '../variables/transitions' as transition;
+
+$button-types: (
+	'primary',
+	'secondary',
+	'success',
+	'danger',
+	'warning',
+	'info',
+	'outline',
+	'large',
+	'small',
+) !default;
 
 .c-button {
 	--spacing-inner-vertical: #{fn.spacing()};
@@ -67,58 +81,86 @@
 		cursor: not-allowed;
 	}
 
-	&--primary {
-		--color-text: #FFF;
-		--color-border: #{color.$theme-dark};
-		--color-background: #{color.$theme};
+	@if list.index($button-types, 'primary') {
+
+		&--primary {
+			--color-text: #FFF;
+			--color-border: #{color.$theme-dark};
+			--color-background: #{color.$theme};
+		}
 	}
 
-	&--secondary {
-		--color-text: #FFF;
-		--color-border: #{color.$gray-700};
-		--color-background: #{color.$gray-600};
+	@if list.index($button-types, 'secondary') {
+
+		&--secondary {
+			--color-text: #FFF;
+			--color-border: #{color.$gray-700};
+			--color-background: #{color.$gray-600};
+		}
 	}
 
-	&--success {
-		--color-text: #FFF;
-		--color-border: #115A38;
-		--color-background: #198754;
+	@if list.index($button-types, 'success') {
+
+		&--success {
+			--color-text: #FFF;
+			--color-border: #115A38;
+			--color-background: #198754;
+		}
 	}
 
-	&--danger {
-		--color-text: #FFF;
-		--color-border: #A91E2C;
-		--color-background: #DC3545;
+	@if list.index($button-types, 'danger') {
+
+		&--danger {
+			--color-text: #FFF;
+			--color-border: #A91E2C;
+			--color-background: #DC3545;
+		}
 	}
 
-	&--warning {
-		--color-text: #000;
-		--color-border: #E09900;
-		--color-background: #FFC107;
+	@if list.index($button-types, 'warning') {
+
+		&--warning {
+			--color-text: #000;
+			--color-border: #E09900;
+			--color-background: #FFC107;
+		}
 	}
 
-	&--info {
-		--color-text: #FFF;
-		--color-border: #117C8D;
-		--color-background: #17A2B8;
+	@if list.index($button-types, 'info') {
+
+		&--info {
+			--color-text: #FFF;
+			--color-border: #117C8D;
+			--color-background: #17A2B8;
+		}
 	}
 
-	&--outline {
-		--color-hover-background: var(--color-background);
-		--color-hover-border: var(--color-hover-background);
-		--width-border: 1px;
+	@if list.index($button-types, 'outline') {
 
-		background-color: transparent;
-		color: var(--color-border);
+		&--outline {
+			--color-hover-background: var(--color-background);
+			--color-hover-border: var(--color-hover-background);
+			--width-border: 1px;
+
+			background-color: transparent;
+			color: var(--color-border);
+		}
 	}
 
-	&--large {
-		--spacing-inner-vertical: #{fn.spacing(1.25)};
-		--size-font: 1.2rem;
+	@if list.index($button-types, 'large') {
+
+		&--large {
+			--spacing-inner-vertical: #{fn.spacing(1.25)};
+			--size-font: 1.2rem;
+		}
 	}
 
-	&--small {
-		--spacing-inner-vertical: #{fn.spacing(.5)};
-		--size-font: .8rem;
+	@if list.index($button-types, 'small') {
+
+		&--small {
+			--spacing-inner-vertical: #{fn.spacing(.5)};
+			--size-font: .8rem;
+		}
 	}
+
 }
