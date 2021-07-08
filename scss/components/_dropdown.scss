@@ -1,0 +1,63 @@
+@use '../functions' as fn;
+@use '../variables/color';
+@use '../variables/transition';
+@use '../placeholders';
+
+.c-dropdown {
+	position: relative;
+
+	&__title {
+		margin-right: fn.spacing(.5);
+	}
+
+	&__toggle {
+		display: flex;
+		align-items: center;
+	}
+
+	&__menu {
+		--color-background: #FFF;
+		--color-border: #{color.$gray-400};
+		--spacing-vertical: #{fn.spacing()};
+		--opacity: 0;
+		--width-min: 125px;
+		--width-border: 1px;
+		--style-border: solid;
+
+		position: absolute;
+		opacity: var(--opacity);
+		transition: transition.$speed;
+		@extend %reset-list;
+		padding: var(--spacing-vertical) 0;
+		background-color: var(--color-background);
+		min-width: var(--width-min);
+		border-radius: 4px;
+		border: var(--width-border) var(--style-border) var(--color-border);
+		margin-top: 2px;
+
+		&.is-active {
+			--opacity: 1;
+		}
+	}
+
+	&__link {
+		--color-text: #{color.$gray-900};
+		--spacing-vertical: #{fn.spacing(.5)};
+		--spacing-horizontal: #{fn.spacing(2)};
+		--color-hover-background: #{color.$gray-300};
+
+		padding: var(--spacing-vertical) var(--spacing-horizontal);
+		text-decoration: none;
+		color: var(--color-text);
+		width: 100%;
+		display: block;
+
+		&:not(:disabled) {
+			cursor: pointer;
+
+			&:hover {
+				background-color: var(--color-hover-background);
+			}
+		}
+	}
+}
