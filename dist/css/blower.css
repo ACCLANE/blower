@@ -658,6 +658,92 @@ blockquote {
   --color-link-background: rgba(0, 0, 0, .2);
 }
 
+.c-toast {
+  --color-background: #FFF;
+  --color-border: #E9ECEF;
+  --style-border: solid;
+  --width-border: 1px;
+  --radius-border: 4px;
+  --width: 300px;
+  background-color: var(--color-background);
+  border-radius: var(--radius-border);
+  box-shadow: 0 4px 20px 4px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  width: var(--width);
+}
+.c-toast__header, .c-toast__body {
+  font-size: 14px;
+}
+.c-toast__header {
+  --spacing-inner-vertical: 0.4rem;
+  --spacing-inner-horizontal: 0.6rem;
+  padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+  border-bottom: var(--width-border) var(--style-border) var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.c-toast__close {
+  --color-border: transparent;
+  --color-background: transparent;
+  --spacing-inner-vertical: 0;
+  --size-font: 14px;
+}
+.c-toast__close:active {
+  --color-active-text: #019FE3;
+  --color-active-background: transparent;
+  --color-active-border: transparent;
+}
+.c-toast__body {
+  --spacing-inner-vertical: 0.6rem;
+  --spacing-inner-horizontal: 0.6rem;
+  padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+}
+.c-toast--simple {
+  --spacing-inner-vertical: 0.6rem;
+  --spacing-inner-horizontal: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+}
+.c-toast--simple .c-toast__body {
+  --spacing-inner-vertical: 0;
+  --spacing-inner-horizontal: 0;
+}
+.c-toast--top-left, .c-toast--top-center, .c-toast--top-right, .c-toast--bottom-left, .c-toast--bottom-center, .c-toast--bottom-right {
+  position: absolute;
+}
+.c-toast--top-left {
+  left: 0;
+  top: 0;
+}
+.c-toast--top-center {
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+.c-toast--top-right {
+  right: 0;
+  top: 0;
+}
+.c-toast--bottom-left {
+  bottom: 0;
+  left: 0;
+}
+.c-toast--bottom-center {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.c-toast--bottom-right {
+  right: 0;
+  bottom: 0;
+}
+
+.u-toast-stack .c-toast:not(:first-of-type) {
+  margin-top: 0.5rem;
+}
+
 .c-tooltip {
   --color-background: #F8F9FA;
   --color-border: #CED4DA;
@@ -825,5 +911,3 @@ blockquote {
   grid-template-columns: 300px 1fr;
   min-height: 100vh;
 }
-
-/*# sourceMappingURL=blower.css.map */

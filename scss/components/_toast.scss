@@ -1,0 +1,123 @@
+@use '../variables/color';
+@use '../variables/base';
+@use '../variables/font';
+@use '../functions' as fn;
+
+.c-toast {
+	--color-background: #FFF;
+	--color-border: #{color.$gray-200};
+	--style-border: solid;
+	--width-border: 1px;
+	--radius-border: 4px;
+	--width: 300px;
+
+	background-color: var(--color-background);
+	border-radius: var(--radius-border);
+	box-shadow: base.$shadow-box;
+	max-width: 100%;
+	width: var(--width);
+
+	&__header,
+	&__body {
+		font-size: font.$text-s;
+	}
+
+	&__header {
+		--spacing-inner-vertical: #{fn.spacing(.8)};
+		--spacing-inner-horizontal: #{fn.spacing(1.2)};
+
+		padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+		border-bottom: var(--width-border) var(--style-border) var(--color-border);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__close {
+		--color-border: transparent;
+		--color-background: transparent;
+		--spacing-inner-vertical: 0;
+		--size-font: #{font.$text-s};
+
+		&:active {
+			--color-active-text: #{color.$link-default};
+			--color-active-background: transparent;
+			--color-active-border: transparent;
+		}
+	}
+
+	&__body {
+		--spacing-inner-vertical: #{fn.spacing(1.2)};
+		--spacing-inner-horizontal: #{fn.spacing(1.2)};
+
+		padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+	}
+
+	/// Vereinfachte Darstellung ohne Header
+	&--simple {
+		--spacing-inner-vertical: #{fn.spacing(1.2)};
+		--spacing-inner-horizontal: #{fn.spacing(1.2)};
+
+		display: flex;
+		justify-content: space-between;
+		padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+
+		.c-toast__body {
+			--spacing-inner-vertical: 0;
+			--spacing-inner-horizontal: 0;
+		}
+	}
+
+	/// Freie Positionierung
+	&--top-left,
+	&--top-center,
+	&--top-right,
+	&--bottom-left,
+	&--bottom-center,
+	&--bottom-right {
+		position: absolute;
+	}
+
+	&--top-left {
+		left: 0;
+		top: 0;
+	}
+
+	&--top-center {
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
+	}
+
+	&--top-right {
+		right: 0;
+		top: 0;
+	}
+
+	&--bottom-left {
+		bottom: 0;
+		left: 0;
+	}
+
+	&--bottom-center {
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&--bottom-right {
+		right: 0;
+		bottom: 0;
+	}
+
+}
+
+.u-toast-stack {
+
+	.c-toast {
+
+		&:not(:first-of-type) {
+			margin-top: fn.spacing();
+		}
+	}
+}
