@@ -915,20 +915,38 @@ blockquote {
 }
 .c-dropdown__link {
   --color-text: #212529;
+  --color-text-active: #FFF;
+  --color-background-active: #343A40;
   --spacing-vertical: 0.25rem;
   --spacing-horizontal: 1rem;
-  --color-hover-background: #DEE2E6;
   padding: var(--spacing-vertical) var(--spacing-horizontal);
   text-decoration: none;
   color: var(--color-text);
   width: 100%;
   display: block;
+  background-color: var(--color-background);
+  cursor: var(--cursor);
 }
-.c-dropdown__link:not(:disabled) {
-  cursor: pointer;
+.c-dropdown__link:not(.is-disabled) {
+  --cursor: pointer;
 }
-.c-dropdown__link:not(:disabled):hover {
-  background-color: var(--color-hover-background);
+.c-dropdown__link:not(.is-disabled):hover {
+  --color-background: rgba(1, 159, 227, 0.2);
+  --color-text: #212529;
+}
+.c-dropdown__link:not(.is-disabled):active {
+  --color-background: var(--color-background-active);
+  --color-text: var(--color-text-active);
+  transition-duration: 100ms;
+}
+.c-dropdown__link.is-active {
+  --color-background: var(--theme);
+  --color-text: #FFF;
+}
+.c-dropdown__link.is-disabled {
+  --color-background: #CED4DA;
+  --color-text: #6C757D;
+  --cursor: not-allowed;
 }
 
 .o-main-page {

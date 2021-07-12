@@ -43,22 +43,44 @@
 
 	&__link {
 		--color-text: #{color.$gray-900};
+		--color-text-active: #FFF;
+		--color-background-active: #{color.$gray-800};
 		--spacing-vertical: #{fn.spacing(.5)};
 		--spacing-horizontal: #{fn.spacing(2)};
-		--color-hover-background: #{color.$gray-300};
 
 		padding: var(--spacing-vertical) var(--spacing-horizontal);
 		text-decoration: none;
 		color: var(--color-text);
 		width: 100%;
 		display: block;
+		background-color: var(--color-background);
+		cursor: var(--cursor);
 
-		&:not(:disabled) {
-			cursor: pointer;
+		&:not(.is-disabled) {
+			--cursor: pointer;
 
 			&:hover {
-				background-color: var(--color-hover-background);
+				--color-background: #{rgba(color.$theme, .2)};
+				--color-text: #{color.$gray-900};
 			}
+
+			&:active {
+				--color-background: var(--color-background-active);
+				--color-text: var(--color-text-active);
+
+				transition-duration: transition.$speed-instant;
+			}
+		}
+
+		&.is-active {
+			--color-background: var(--theme);
+			--color-text: #FFF;
+		}
+
+		&.is-disabled {
+			--color-background: #{color.$gray-400};
+			--color-text: #{color.$gray-600};
+			--cursor: not-allowed;
 		}
 	}
 }
