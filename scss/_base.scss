@@ -15,6 +15,7 @@
 
 html {
 	box-sizing: border-box;
+	scroll-behavior: smooth; /// Wird leider nicht in Safari supported. Ein Polyfill steht bereit: https://github.com/iamdustan/smoothscroll
 }
 
 html,
