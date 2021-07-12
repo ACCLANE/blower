@@ -1,5 +1,6 @@
 @use 'variables/font';
 @use 'variables/color';
+@use 'functions' as fn;
 
 * {
 	margin: 0;
@@ -21,4 +22,13 @@ body {
 ::selection {
 	background-color: color.$theme;
 	color: #FFF;
+}
+
+/// Konvertiert alle SCSS Farbvariablen in CSS Variablen und fügt sie dem :root hinzu
+$all-colors: fn.map-collect(color.$theme-colors, color.$link-colors, color.$grays);
+
+:root {
+	@each $name, $color in $all-colors {
+		--#{$name}: #{$color};
+	}
 }

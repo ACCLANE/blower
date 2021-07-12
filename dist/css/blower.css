@@ -195,6 +195,25 @@ body {
   color: #FFF;
 }
 
+:root {
+  --theme: #019FE3;
+  --theme-dark: #017bb0;
+  --link-default: #019FE3;
+  --link-visited: #017bb0;
+  --link-hover: #133324;
+  --link-focus: #133324;
+  --link-active: #000;
+  --gray-100: #F8F9FA;
+  --gray-200: #E9ECEF;
+  --gray-300: #DEE2E6;
+  --gray-400: #CED4DA;
+  --gray-500: #ADB5BD;
+  --gray-600: #6C757D;
+  --gray-700: #495057;
+  --gray-800: #343A40;
+  --gray-900: #212529;
+}
+
 code {
   --color-background: #E9ECEF;
   --spacing-inner: 0.25rem;
