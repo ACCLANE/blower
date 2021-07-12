@@ -16,6 +16,8 @@
 	}
 
 	&__menu {
+		@extend %reset-list;
+
 		--color-background: #FFF;
 		--color-border: #{color.$gray-400};
 		--spacing-vertical: #{fn.spacing()};
@@ -27,7 +29,6 @@
 		position: absolute;
 		opacity: var(--opacity);
 		transition: transition.$speed;
-		@extend %reset-list;
 		padding: var(--spacing-vertical) 0;
 		background-color: var(--color-background);
 		min-width: var(--width-min);
