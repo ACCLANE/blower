@@ -2,26 +2,26 @@
 @use '../variables/transition';
 
 a {
-	color: var(--color);
+	color: var(--link-default);
 	transition: color transition.$speed-fast;
 
 	&:link {
-		--color: #{color.$link-default};
+		color: var(--link-default);
 	}
 
 	&:visited {
-		--color: #{color.$link-visited};
+		color: var(--link-visited);
 	}
 
 	&:hover {
-		--color: #{color.$link-hover};
+		color: var(--link-hover);
 	}
 
 	&:focus-visible {
-		--color: #{color.$link-focus};
+		color: var(--link-focus);
 	}
 
 	&:active {
-		--color: #{color.$link-active};
+		color: var(--link-active);
 	}
 }
