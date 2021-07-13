@@ -449,23 +449,23 @@ figure figcaption {
 }
 
 a {
-  color: var(--color);
+  color: var(--link-default);
   transition: color 200ms;
 }
 a:link {
-  --color: #019FE3;
+  color: var(--link-default);
 }
 a:visited {
-  --color: #017bb0;
+  color: var(--link-visited);
 }
 a:hover {
-  --color: #133324;
+  color: var(--link-hover);
 }
 a:focus-visible {
-  --color: #133324;
+  color: var(--link-focus);
 }
 a:active {
-  --color: #000;
+  color: var(--link-active);
 }
 
 dl, ol, ul {
