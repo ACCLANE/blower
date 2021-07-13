@@ -1,0 +1,32 @@
+@use 'sass:string';
+@use 'sass:meta';
+
+/// Replace `$search` with `$replace` in `$string`
+/// Used on our SVG icon backgrounds for custom forms.
+///
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+///
+/// @example
+/// 	$string: 'I hate SCSS!';
+/// 	@include str-replace($string, 'hate', 'love');
+/// 	//=> I love SCSS!
+///
+@function str-replace($string, $search, $replace: '') {
+	@if meta.type-of($string) != string {
+		@error '❌  ===> #{$string} is not a string';
+	}
+	@if meta.type-of($search) != string {
+		@error '❌  ===> #{$search} is not a string';
+	}
+
+	$index: string.index($string, $search);
+
+	@if $index {
+		@return string.slice($string, 1, $index - 1) + $replace + str-replace(string.slice($string, $index + string.length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
