@@ -926,6 +926,7 @@ blockquote {
   display: block;
   background-color: var(--color-background);
   cursor: var(--cursor);
+  transition-duration: 100ms;
 }
 .c-dropdown__link:not(.is-disabled) {
   --cursor: pointer;
@@ -937,7 +938,6 @@ blockquote {
 .c-dropdown__link:not(.is-disabled):active {
   --color-background: var(--color-background-active);
   --color-text: var(--color-text-active);
-  transition-duration: 100ms;
 }
 .c-dropdown__link.is-active {
   --color-background: var(--theme);

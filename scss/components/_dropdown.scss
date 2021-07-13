@@ -55,6 +55,7 @@
 		display: block;
 		background-color: var(--color-background);
 		cursor: var(--cursor);
+		transition-duration: transition.$speed-instant;
 
 		&:not(.is-disabled) {
 			--cursor: pointer;
@@ -67,8 +68,6 @@
 			&:active {
 				--color-background: var(--color-background-active);
 				--color-text: var(--color-text-active);
-
-				transition-duration: transition.$speed-instant;
 			}
 		}
 
