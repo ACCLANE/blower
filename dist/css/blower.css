@@ -660,9 +660,6 @@ a {
   color: var(--link-default);
   transition: color 200ms;
 }
-a:link {
-  color: var(--link-default);
-}
 a:visited {
   color: var(--link-visited);
 }
@@ -873,14 +870,17 @@ blockquote {
 
 .c-list-navigation {
   --spacing-inner: 0.75rem;
+  color: #FFF;
   margin-left: calc(var(--spacing-inner) * -1);
   margin-right: calc(var(--spacing-inner) * -1);
+}
+.c-list-navigation__item a {
+  color: currentColor;
 }
 .c-list-navigation__link {
   --color-link-background: transparent;
   display: block;
   padding: calc(var(--spacing-inner) / 1.25) var(--spacing-inner);
-  color: var(--color-link, #019FE3);
   background-color: var(--color-link-background);
   text-decoration: none;
   border-radius: 4px;
@@ -1174,6 +1174,9 @@ blockquote {
 }
 .o-main-page__header-icons {
   display: flex;
+}
+.o-main-page__header-icons a {
+  color: var(--color);
 }
 .o-main-page__header-icons a:link {
   --color: #133324;
