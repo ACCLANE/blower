@@ -10,6 +10,12 @@ Werte mit einem `?` dahinter sind optional.
 
 _CSS & SCSS Variablen werden dementsprechend in **kebab-case** geschrieben._
 
+## Namespace Besonderheiten
+Eingebundene (`@use`) Projekt Variablendateien nutzen ihren eigenen Namespace, ohne das dieser gesondert via `as` angeben werden muss. Dies führt zu Überscheidungen mit den SASS eigenen Modulen. Daher erhalten alle SASS Module einen komplett eigenen Namespace. Folgendes Schema wird angewandt: `s-funktionsname`.
+
+Ein Beispiel an Hand des Color Modules:
+`@use 'sass:color' as s-color;`
+
 ## Dateistruktur
 Standard-Ordner nach BEMIT (`components`, `objects` etc.)  
 Ordner für Mixins, Functions, Variables, Utilites je mit eigener Datei pro Segment und Master-Datei, in der alle zusammenlaufen.
