@@ -1,4 +1,4 @@
-@use 'sass:color' as c; // FIXME: Namespace Konflikt
+@use 'sass:color' as s-color;
 
 @use '../functions' as fn;
 @use '../variables/base';
@@ -12,12 +12,17 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
 
+	// FIXME: Der Select hover state passt farblich nicht
 	input,
 	textarea,
 	select {
 		--spacing-inner: #{fn.spacing(.75)};
-		--color-border: #{color.$gray-600};
+		--color-border: var(--gray-600);
+		--color-border-hover: var(--theme);
 		--size-font: 1rem;
+		--box-shadow-focus: 2px #{rgba(color.$theme, .3)};
+		--color-background: #FFF;
+		--color-background-disabled: var(--gray-200);
 
 		padding: var(--spacing-inner);
 		font-family: font.$primary;
@@ -29,19 +34,20 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 			duration: transition.$speed-fast;
 		}
 		appearance: none;
+		background: var(--color-background);
 
 		&:not([type='file']) {
 			border: 1px solid var(--color-border);
 			outline: none;
 
-			&:focus-visible {
-				--color-border: #{color.$theme};
-
-				box-shadow: 0 0 0 1px var(--color-border);
+			&:focus {
+				box-shadow: 0 0 0 var(--box-shadow-focus);
 			}
 		}
 
 		&:disabled {
+			--color-background: var(--color-background-disabled);
+
 			cursor: not-allowed;
 		}
 	}
@@ -74,27 +80,22 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 
 	input[type='checkbox'],
 	input[type='radio'] {
-		--color-background: #FFF;
-		--color-border: #{c.scale(color.$theme, $lightness: 30%)};
-		--color-active: #{color.$theme};
+		--color-active: var(--theme);
 		--color-active-inner: #FFF;
-		--box-shadow-focus: 2px #{rgba(color.$theme, .3)};
-		--color-border-disabled-checked: #{c.scale(color.$theme, $lightness: 60%)};
-		--color-border-hover: #{color.$theme};
-		--color-background-disabled: #{color.$gray-300};
-		--color-background-disabled-checked: #{c.scale(color.$theme, $lightness: 80%)};
+		--color-border-disabled-checked: #{s-color.scale(color.$theme, $lightness: 60%)};
+		--color-background-disabled-checked: #{s-color.scale(color.$theme, $lightness: 80%)};
 		--duration-transition-transform: .3s;
 		--timing-transition-transform: ease;
 		--duration-transition-opacity: .2s;
+		--cursor: pointer;
 
 		height: 21px;
 		display: inline-block;
 		vertical-align: top;
 		position: relative;
 		margin: 0;
-		cursor: pointer;
+		cursor: var(--cursor);
 		border: 1px solid var(--color-border);
-		background: var(--color-background);
 		transition: background .3s, border-color .3s, box-shadow .2s;
 
 		&::after {
@@ -117,7 +118,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 		&:disabled {
 			--color-background: var(--color-background-disabled);
 
-			cursor: not-allowed;
+			--cursor: not-allowed;
 			opacity: .9;
 
 			&:checked {
@@ -126,7 +127,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 			}
 
 			& + label {
-				cursor: not-allowed;
+				--cursor: not-allowed;
 			}
 		}
 
@@ -144,7 +145,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 			box-shadow: 0 0 0 var(--box-shadow-focus);
 		}
 
-		&:not(.o-switch) {
+		&:not(.u-switch) {
 			width: 21px;
 
 			&::after {
@@ -157,18 +158,20 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 		}
 
 		& + label {
+			--cursor: pointer;
+
 			font-size: 14px;
 			line-height: 21px;
 			display: inline-block;
 			vertical-align: top;
-			cursor: pointer;
+			cursor: var(--cursor);
 			margin-left: 4px;
 		}
 	}
 
 	input[type='checkbox'] {
 
-		&:not(.o-switch) {
+		&:not(.u-switch) {
 			border-radius: 3px;
 
 			&::after {
@@ -190,23 +193,25 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 			}
 		}
 
-		&.o-switch {
+		&.u-switch {
 			width: 38px;
 			border-radius: 11px;
 
 			&::after {
+				--color-background: #{color.$gray-500};
+
 				left: 2px;
 				top: 2px;
 				border-radius: 50%;
 				width: 15px;
 				height: 15px;
-				background: var(--ab, var(--border));
-				transform: translateX(var(--x, 0));
+				background: var(--color-background-after, var(--color-background));
+				transform: translateX(var(--translate-x, 0));
 			}
 
 			&:checked {
-				--ab: var(--color-active-inner);
-				--x: 17px;
+				--color-background-after: #FFF;
+				--translate-x: 17px;
 			}
 
 			&:disabled {
@@ -266,5 +271,13 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 			padding: 0 var(--spacing-legend);
 			margin-left: fn.negate(var(--spacing-legend));
 		}
+	}
+}
+
+.u-check {
+	display: block;
+
+	&:not(:last-of-type) {
+		margin-bottom: fn.spacing();
 	}
 }
