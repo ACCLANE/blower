@@ -9,6 +9,7 @@
 
 	--spacing-inner: #{fn.spacing(1.5)};
 
+	color: #FFF;
 	margin: {
 		left: fn.negate(var(--spacing-inner));
 		right: fn.negate(var(--spacing-inner));
@@ -16,6 +17,9 @@
 
 	&__item {
 
+		a {
+			color: currentColor;
+		}
 	}
 
 	&__link {
@@ -23,7 +27,6 @@
 
 		display: block;
 		padding: calc(var(--spacing-inner) / 1.25) var(--spacing-inner);
-		color: var(--color-link, color.$link-default);
 		background-color: var(--color-link-background);
 		text-decoration: none;
 		border-radius: base.$corner-radius;

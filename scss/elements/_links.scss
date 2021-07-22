@@ -5,10 +5,6 @@ a {
 	color: var(--link-default);
 	transition: color transition.$speed-fast;
 
-	&:link {
-		color: var(--link-default);
-	}
-
 	&:visited {
 		color: var(--link-visited);
 	}

@@ -23,6 +23,7 @@
 			display: flex;
 
 			a {
+				color: var(--color);
 
 				&:link {
 					--color: #{color.$link-hover};
