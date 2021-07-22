@@ -284,7 +284,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 
 // TODO: Dateistruktur verbesser (aufräumen)
 
-%normalize-input-group-borders {
+%merge-input-group-borders {
 
 	&:not(:first-child) {
 		border-top-left-radius: 0;
@@ -305,7 +305,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 	width: 100%;
 
 	&__text {
-		@extend %normalize-input-group-borders;
+		@extend %merge-input-group-borders;
 
 		--color-border: var(--gray-600);
 		--spacing-inner-vertical: #{fn.spacing(.75)};
@@ -320,7 +320,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 	}
 
 	&__input {
-		@extend %normalize-input-group-borders;
+		@extend %merge-input-group-borders;
 
 		position: relative;
 		flex: 1 1 auto;
