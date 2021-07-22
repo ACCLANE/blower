@@ -622,6 +622,46 @@ input[type=radio] + label {
   margin-bottom: 0.5rem;
 }
 
+.c-input-group__input:not(:first-child), .c-input-group__text:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.c-input-group__input:not(:last-child), .c-input-group__text:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.c-input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+.c-input-group__text {
+  --color-border: var(--gray-600);
+  --spacing-inner-vertical: 0.375rem;
+  --spacing-inner-horizontal: calc(var(--spacing-inner-vertical) * 2);
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  background-color: var(--gray-200);
+  padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+}
+.c-input-group__input {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  min-width: 0;
+}
+.c-input-group__input:not(:first-child) {
+  margin-left: -1px;
+}
+.c-input-group__input:not(:last-child) {
+  margin-right: -1px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   --spacing-after: 0.5rem;
   margin-bottom: var(--spacing-after);
