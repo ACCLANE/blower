@@ -909,6 +909,26 @@ blockquote {
   font-size: calc(var(--size-text) * .75);
   color: var(--color-text-footer);
 }
+.c-card--horizontal {
+  --size-image: 100px;
+  --size-text: 14px;
+  display: grid;
+  grid-template-columns: var(--size-image) 1fr;
+  gap: var(--spacing-inner);
+}
+.c-card--horizontal .c-card__image {
+  width: var(--size-image);
+  height: var(--size-image);
+  object-fit: cover;
+  margin-bottom: 0;
+}
+.c-card--horizontal .c-card__text {
+  margin-bottom: 0;
+  line-height: 1.25;
+}
+.c-card--horizontal .c-card__footer {
+  display: none;
+}
 
 .c-dropdown__menu, .c-list-navigation {
   --spacing-indentation: 0;
@@ -1176,7 +1196,8 @@ blockquote {
   --color-text-active: #FFF;
   --color-background-active: rgba(1, 159, 227, 0.75);
   --spacing-vertical: 0.25rem;
-  --spacing-horizontal: 1rem;
+  --spacing-horizontal: 0.75rem;
+  --size-font: 14px;
   padding: var(--spacing-vertical) var(--spacing-horizontal);
   text-decoration: none;
   color: var(--color-text);
@@ -1185,6 +1206,7 @@ blockquote {
   background-color: var(--color-background);
   cursor: var(--cursor);
   transition-duration: 100ms;
+  font-size: var(--size-font);
 }
 .c-dropdown__link:not(.is-disabled) {
   --cursor: pointer;

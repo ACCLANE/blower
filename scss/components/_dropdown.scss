@@ -1,5 +1,6 @@
 @use '../functions' as fn;
 @use '../variables/color';
+@use '../variables/font';
 @use '../variables/transition';
 @use '../placeholders';
 
@@ -48,7 +49,8 @@
 		--color-text-active: #FFF;
 		--color-background-active: #{rgba(color.$theme, .75)};
 		--spacing-vertical: #{fn.spacing(.5)};
-		--spacing-horizontal: #{fn.spacing(2)};
+		--spacing-horizontal: #{fn.spacing(1.5)};
+		--size-font: #{font.$text-s};
 
 		padding: var(--spacing-vertical) var(--spacing-horizontal);
 		text-decoration: none;
@@ -58,6 +60,7 @@
 		background-color: var(--color-background);
 		cursor: var(--cursor);
 		transition-duration: transition.$speed-instant;
+		font-size: var(--size-font);
 
 		&:not(.is-disabled) {
 			--cursor: pointer;
