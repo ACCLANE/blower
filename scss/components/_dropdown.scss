@@ -43,8 +43,10 @@
 
 	&__link {
 		--color-text: #{color.$gray-900};
+		--color-text-hover: var(--color-text);
+		--color-background-hover: #{rgba(color.$theme, .15)};
 		--color-text-active: #FFF;
-		--color-background-active: #{color.$gray-800};
+		--color-background-active: #{rgba(color.$theme, .75)};
 		--spacing-vertical: #{fn.spacing(.5)};
 		--spacing-horizontal: #{fn.spacing(2)};
 
@@ -61,13 +63,13 @@
 			--cursor: pointer;
 
 			&:hover {
-				--color-background: #{rgba(color.$theme, .2)};
-				--color-text: #{color.$gray-900};
+				background: var(--color-background-hover);
+				color: var(--color-text-hover);
 			}
 
 			&:active {
-				--color-background: var(--color-background-active);
-				--color-text: var(--color-text-active);
+				background: var(--color-background-active);
+				color: var(--color-text-active);
 			}
 		}
 

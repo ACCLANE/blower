@@ -186,7 +186,6 @@ template {
 
 html {
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 html,
@@ -1172,8 +1171,10 @@ blockquote {
 }
 .c-dropdown__link {
   --color-text: #212529;
+  --color-text-hover: var(--color-text);
+  --color-background-hover: rgba(1, 159, 227, 0.15);
   --color-text-active: #FFF;
-  --color-background-active: #343A40;
+  --color-background-active: rgba(1, 159, 227, 0.75);
   --spacing-vertical: 0.25rem;
   --spacing-horizontal: 1rem;
   padding: var(--spacing-vertical) var(--spacing-horizontal);
@@ -1189,12 +1190,12 @@ blockquote {
   --cursor: pointer;
 }
 .c-dropdown__link:not(.is-disabled):hover {
-  --color-background: rgba(1, 159, 227, 0.2);
-  --color-text: #212529;
+  background: var(--color-background-hover);
+  color: var(--color-text-hover);
 }
 .c-dropdown__link:not(.is-disabled):active {
-  --color-background: var(--color-background-active);
-  --color-text: var(--color-text-active);
+  background: var(--color-background-active);
+  color: var(--color-text-active);
 }
 .c-dropdown__link.is-active {
   --color-background: var(--theme);
