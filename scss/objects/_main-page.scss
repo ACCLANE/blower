@@ -34,5 +34,11 @@
 				}
 			}
 		}
+
+		&-title {
+			--spacing-after: 0;
+
+			font-size: font.$headline-s;
+		}
 	}
 }

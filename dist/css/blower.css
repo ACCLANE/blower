@@ -1256,6 +1256,10 @@ blockquote {
 .o-main-page__header-icons a:hover {
   --color: #019FE3;
 }
+.o-main-page__header-title {
+  --spacing-after: 0;
+  font-size: 24px;
+}
 
 .o-sidebar {
   --spacing-content-horizontal: 1.5rem;
