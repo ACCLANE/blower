@@ -22,6 +22,16 @@
 		margin-bottom: calc(var(--spacing-content-vertical) / 2);
 	}
 
+	&__logo {
+
+		img, svg {
+			display: block;
+			height: 30px;
+			width: auto;
+			padding: fn.spacing(.5) 0;
+		}
+	}
+
 	&__title {
 		--spacing-after: 0;
 
@@ -37,5 +47,10 @@
 			text-transform: uppercase;
 			color: var(--color-text);
 		}
+	}
+
+	&.has-theme-color {
+		--color-background: #{color.$theme};
+		--color-background-header: #{color.$theme-dark};
 	}
 }

@@ -1,6 +1,6 @@
 @use 'sass:color';
 
-$theme: #019FE3 !default;
+$theme: #009EE3 !default;
 $theme-dark: color.adjust($theme, $lightness: -10%);
 
 $theme-colors: (
