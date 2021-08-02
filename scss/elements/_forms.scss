@@ -24,7 +24,6 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 		--color-background: #FFF;
 		--color-background-disabled: var(--gray-200);
 
-		padding: var(--spacing-inner);
 		font-family: font.$primary;
 		font-size: var(--size-font);
 		border-radius: base.$corner-radius;
@@ -35,14 +34,15 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 		}
 		appearance: none;
 		background: var(--color-background);
+		outline: none;
+		border: 1px solid var(--color-border);
+
+		&:focus {
+			box-shadow: 0 0 0 var(--box-shadow-focus);
+		}
 
 		&:not([type='file']) {
-			border: 1px solid var(--color-border);
-			outline: none;
-
-			&:focus {
-				box-shadow: 0 0 0 var(--box-shadow-focus);
-			}
+			padding: var(--spacing-inner);
 		}
 
 		&:disabled {
@@ -243,6 +243,35 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 		}
 	}
 
+	input[type='file' i] {
+
+		&:not(:disabled) {
+			cursor: pointer;
+
+			&:hover {
+
+				&::file-selector-button {
+					--width-border: 0;
+					--color-hover-border: var(--gray-600);
+					border-inline-end-width: 1px;
+				}
+			}
+		}
+
+
+		&::file-selector-button {
+			@extend .c-button;
+
+			--width-border: 0;
+
+			margin-inline-end: fn.spacing();
+			border-inline-end-width: 1px;
+			border-color: inherit;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+
 	select {
 		--spacing-inner: #{fn.spacing(.750)} #{fn.spacing(4.5)} #{fn.spacing(.750)} #{fn.spacing(1.5)};
 
@@ -284,55 +313,4 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 
 // TODO: Dateistruktur verbesser (aufräumen)
 
-%merge-input-group-borders {
 
-	&:not(:first-child) {
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-	}
-
-	&:not(:last-child) {
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
-	}
-}
-
-.c-input-group {
-	position: relative;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: stretch;
-	width: 100%;
-
-	&__text {
-		@extend %merge-input-group-borders;
-
-		--color-border: var(--gray-600);
-		--spacing-inner-vertical: #{fn.spacing(.75)};
-		--spacing-inner-horizontal: calc(var(--spacing-inner-vertical) * 2);
-
-		display: flex;
-		align-items: center;
-		border-radius: 4px;
-		border: 1px solid var(--color-border);
-		background-color: var(--gray-200);
-		padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
-	}
-
-	&__input {
-		@extend %merge-input-group-borders;
-
-		position: relative;
-		flex: 1 1 auto;
-		width: 1%;
-		min-width: 0;
-
-		&:not(:first-child) {
-			margin-left: -1px;
-		}
-
-		&:not(:last-child) {
-			margin-right: -1px;
-		}
-	}
-}
