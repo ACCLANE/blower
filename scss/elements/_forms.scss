@@ -12,8 +12,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
 
-	// FIXME: Der Select hover state passt farblich nicht
-	input,
+	input:not([type='range']),
 	textarea,
 	select {
 		--spacing-inner: #{fn.spacing(.75)};
@@ -23,6 +22,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 		--box-shadow-focus: 2px #{rgba(color.$theme, .3)};
 		--color-background: #FFF;
 		--color-background-disabled: var(--gray-200);
+		--width-border: 1px;
 
 		font-family: font.$primary;
 		font-size: var(--size-font);
@@ -35,7 +35,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 		appearance: none;
 		background: var(--color-background);
 		outline: none;
-		border: 1px solid var(--color-border);
+		border: var(--width-border) solid var(--color-border);
 
 		&:focus {
 			box-shadow: 0 0 0 var(--box-shadow-focus);
@@ -242,6 +242,25 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 		}
 	}
 
+	input[type='range'] {
+		--color-background-thumb: var(--theme);
+		--height-track: .3rem;
+		--size-thumb: 1rem;
+
+		&::-webkit-slider-runnable-track {
+			background-color: var(--gray-200);
+			width: 100%;
+			height: var(--height-track);
+		}
+
+		&::-webkit-slider-thumb {
+			background-color: var(--color-background-thumb);
+			width: var(--size-thumb);
+			height: var(--size-thumb);
+			margin-top: calc(-1 * var(--height-track) - .05rem); // -1 to negate the value
+		}
+	}
+
 	input[type='file' i] {
 
 		&:not(:disabled) {
@@ -279,6 +298,10 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 			repeat: no-repeat;
 			position: right fn.spacing(1.5) center;
 			size: 16px 12px;
+		}
+
+		&:not(:disabled):hover {
+			--color-hover-background: var(--gray-200);
 		}
 	}
 
