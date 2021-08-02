@@ -254,7 +254,6 @@ kbd {
 
 .c-button, button,
 select,
-textarea,
 input[type=submit],
 input[type=button],
 input[type=reset],
@@ -293,7 +292,6 @@ input[type=color], input[type=file i]::file-selector-button {
 }
 .c-button:not(:disabled), button:not(:disabled),
 select:not(:disabled),
-textarea:not(:disabled),
 input[type=submit]:not(:disabled),
 input[type=button]:not(:disabled),
 input[type=reset]:not(:disabled),
@@ -302,7 +300,6 @@ input[type=color]:not(:disabled), input[type=file i]:not(:disabled)::file-select
 }
 .c-button:not(:disabled):hover, button:not(:disabled):hover,
 select:not(:disabled):hover,
-textarea:not(:disabled):hover,
 input[type=submit]:not(:disabled):hover,
 input[type=button]:not(:disabled):hover,
 input[type=reset]:not(:disabled):hover,
@@ -313,7 +310,6 @@ input[type=color]:not(:disabled):hover, input[type=file i]:not(:disabled):hover:
 }
 .c-button:not(:disabled):focus-visible, button:not(:disabled):focus-visible,
 select:not(:disabled):focus-visible,
-textarea:not(:disabled):focus-visible,
 input[type=submit]:not(:disabled):focus-visible,
 input[type=button]:not(:disabled):focus-visible,
 input[type=reset]:not(:disabled):focus-visible,
@@ -325,7 +321,6 @@ input[type=color]:not(:disabled):focus-visible, input[type=file i]:not(:disabled
 }
 .c-button:not(:disabled):active, button:not(:disabled):active,
 select:not(:disabled):active,
-textarea:not(:disabled):active,
 input[type=submit]:not(:disabled):active,
 input[type=button]:not(:disabled):active,
 input[type=reset]:not(:disabled):active,
@@ -337,7 +332,6 @@ input[type=color]:not(:disabled):active, input[type=file i]:not(:disabled):activ
 }
 .c-button:disabled, button:disabled,
 select:disabled,
-textarea:disabled,
 input[type=submit]:disabled,
 input[type=button]:disabled,
 input[type=reset]:disabled,
@@ -440,7 +434,6 @@ input[type=tel] {
 
   button,
 select,
-textarea,
 input[type=submit],
 input[type=button],
 input[type=reset],
@@ -636,46 +629,6 @@ input[type=radio] + label {
 }
 .u-check:not(:last-of-type) {
   margin-bottom: 0.5rem;
-}
-
-.c-input-group__input:not(:first-child), .c-input-group__text:not(:first-child) {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.c-input-group__input:not(:last-child), .c-input-group__text:not(:last-child) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.c-input-group {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  width: 100%;
-}
-.c-input-group__text:not(:first-child), .c-input-group__input:not(:first-child) {
-  margin-left: -1px;
-}
-.c-input-group__text:not(:last-child), .c-input-group__input:not(:last-child) {
-  margin-right: -1px;
-}
-.c-input-group__text {
-  --color-border: var(--gray-600);
-  --spacing-inner-vertical: 0.375rem;
-  --spacing-inner-horizontal: calc(var(--spacing-inner-vertical) * 2);
-  display: flex;
-  align-items: center;
-  border-radius: 4px;
-  border: 1px solid var(--color-border);
-  background-color: var(--gray-200);
-  padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
-}
-.c-input-group__input {
-  position: relative;
-  flex: 1 1 auto;
-  width: 1%;
-  min-width: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1244,6 +1197,46 @@ blockquote {
   --color-background: #CED4DA;
   --color-text: #6C757D;
   --cursor: not-allowed;
+}
+
+.c-input-group__input:not(:first-child), .c-input-group__text:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.c-input-group__input:not(:last-child), .c-input-group__text:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.c-input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+.c-input-group__text:not(:first-child), .c-input-group__input:not(:first-child) {
+  margin-left: -1px;
+}
+.c-input-group__text:not(:last-child), .c-input-group__input:not(:last-child) {
+  margin-right: -1px;
+}
+.c-input-group__text {
+  --color-border: var(--gray-600);
+  --spacing-inner-vertical: 0.375rem;
+  --spacing-inner-horizontal: calc(var(--spacing-inner-vertical) * 2);
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  background-color: var(--gray-200);
+  padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+}
+.c-input-group__input {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  min-width: 0;
 }
 
 .o-main-page {
