@@ -6,7 +6,7 @@
 		"url": "https://github.com/ACCLANE/blower"
 	},
 	"engines": {
-		"node": ">=14.0.0"
+		"node": ">=12.0.0"
 	},
 	"private": true,
 	"scripts": {
@@ -18,7 +18,7 @@
 		"lint-fix": "stylelint '**/*.scss' --fix"
 	},
 	"devDependencies": {
-		"sass": "^1.35.2",
+		"sass": "^1.37.0",
 		"stylelint": "^13.13.1"
 	}
 }
