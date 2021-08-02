@@ -584,12 +584,13 @@ input[type=radio] + label {
   }
 
   input[type=range] {
+    --color-background-track: var(--gray-200);
     --color-background-thumb: var(--theme);
     --height-track: .3rem;
     --size-thumb: 1rem;
   }
   input[type=range]::-webkit-slider-runnable-track {
-    background-color: var(--gray-200);
+    background-color: var(--color-background-track);
     width: 100%;
     height: var(--height-track);
   }

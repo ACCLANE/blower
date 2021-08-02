@@ -243,12 +243,13 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 	}
 
 	input[type='range'] {
+		--color-background-track: var(--gray-200);
 		--color-background-thumb: var(--theme);
 		--height-track: .3rem;
 		--size-thumb: 1rem;
 
 		&::-webkit-slider-runnable-track {
-			background-color: var(--gray-200);
+			background-color: var(--color-background-track);
 			width: 100%;
 			height: var(--height-track);
 		}
