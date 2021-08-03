@@ -2,6 +2,7 @@
 @use 'variables/color';
 @use 'functions' as fn;
 
+// Normalization of HTML elements
 * {
 	margin: 0;
 	padding: 0;
@@ -19,7 +20,7 @@ html {
 
 html,
 body {
-	font-family: font.$primary;
+	font-family: if(font.$primary not null, font.$primary, ''), font.$fallback;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.35;

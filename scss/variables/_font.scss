@@ -1,12 +1,13 @@
-$primary: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;
+$fallback: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif !default;
+$primary: null !default;
 
-$text-xs:	12px;
-$text-s:	14px;
-$text-m:	16px;
-$text-l:	18px;
-$text-xl:	20px;
+$text-xs:	12px !default;
+$text-s:	14px !default;
+$text-m:	16px !default;
+$text-l:	18px !default;
+$text-xl:	20px !default;
 
-$headline-s:	24px;
-$headline-m:	28px;
-$headline-l:	40px;
-$headline-xl:	50px;
+$headline-s:	24px !default;
+$headline-m:	28px !default;
+$headline-l:	40px !default;
+$headline-xl:	50px !default;
