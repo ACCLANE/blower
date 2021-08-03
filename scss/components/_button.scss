@@ -27,15 +27,15 @@ $button-types: (
 	--color-text: #{color.$gray-900};
 	--color-border: #{color.$gray-400};
 	--color-background: #{color.$gray-200};
-	--color-hover-text: var(--color-text);
-	--color-hover-border: var(--color-border);
-	--color-hover-background: var(--color-border);
-	--color-focus-text: var(--color-text);
-	--color-focus-border: var(--color-border);
-	--color-focus-background: var(--color-background);
-	--color-active-text: #FFF;
-	--color-active-border: #{color.$gray-900};
-	--color-active-background: #{color.$gray-800};
+	--color-text-hover: var(--color-text);
+	--color-border-hover: var(--color-border);
+	--color-background-hover: var(--color-border);
+	--color-text-focus: var(--color-text);
+	--color-border-focus: var(--color-border);
+	--color-background-focus: var(--color-background);
+	--color-text-active: #FFF;
+	--color-border-active: #{color.$gray-900};
+	--color-background-active: #{color.$gray-800};
 
 	padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
 	color: var(--color-text);
@@ -56,22 +56,22 @@ $button-types: (
 		cursor: pointer;
 
 		&:hover {
-			color: var(--color-hover-text);
-			border: var(--width-border) var(--style-border) var(--color-hover-border);
-			background-color: var(--color-hover-background);
+			color: var(--color-text-hover);
+			border: var(--width-border) var(--style-border) var(--color-border-hover);
+			background-color: var(--color-background-hover);
 		}
 
 		&:focus-visible {
-			color: var(--color-focus-text);
-			border: var(--width-border) var(--style-border) var(--color-focus-border);
-			background-color: var(--color-focus-background);
-			box-shadow: 0 0 0 2px var(--color-focus-border);
+			color: var(--color-text-focus);
+			border: var(--width-border) var(--style-border) var(--color-border-focus);
+			background-color: var(--color-background-focus);
+			box-shadow: 0 0 0 2px var(--color-border-focus);
 		}
 
 		&:active {
-			color: var(--color-active-text);
-			border: var(--width-border) var(--style-border) var(--color-active-border);
-			background-color: var(--color-active-background);
+			color: var(--color-text-active);
+			border: var(--width-border) var(--style-border) var(--color-border-active);
+			background-color: var(--color-background-active);
 			transition-duration: transition.$speed-instant;
 		}
 	}
@@ -138,8 +138,8 @@ $button-types: (
 	@if list.index($button-types, 'outline') {
 
 		&--outline {
-			--color-hover-background: var(--color-background);
-			--color-hover-border: var(--color-hover-background);
+			--color-background-hover: var(--color-background);
+			--color-border-hover: var(--color-background-hover);
 			--width-border: 1px;
 
 			background-color: transparent;

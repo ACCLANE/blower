@@ -11,6 +11,7 @@
 // Module Config
 $rounded: true !default;
 
+// Module Variables
 $icon-color: currentColor;
 $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#{$icon-color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>";
 
@@ -89,7 +90,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 	input[type='checkbox' i],
 	input[type='radio' i] {
 		--color-active: var(--theme);
-		--color-active-inner: #FFF;
+		--color-inner-active: #FFF;
 		--color-border-disabled-checked: #{s-color.scale(color.$theme, $lightness: 60%)};
 		--color-background-disabled-checked: #{s-color.scale(color.$theme, $lightness: 80%)};
 		--duration-transition-transform: .3s;
@@ -193,8 +194,8 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 				transform: rotate(var(--rotate, 20deg));
 				border: {
 					top: 0;
-					right: 2px solid var(--color-active-inner);
-					bottom: 2px solid var(--color-active-inner);
+					right: 2px solid var(--color-inner-active);
+					bottom: 2px solid var(--color-inner-active);
 					left: 0;
 				}
 			}
@@ -249,7 +250,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 			width: 19px;
 			height: 19px;
 			border-radius: 50%;
-			background: var(--color-active-inner);
+			background: var(--color-inner-active);
 			opacity: 0;
 			transform: scale(var(--scale, .7));
 		}
@@ -332,7 +333,8 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 
 				&::file-selector-button {
 					--width-border: 0;
-					--color-hover-border: var(--gray-600);
+					--color-border-hover: var(--gray-600);
+
 					border-inline-end-width: 1px;
 				}
 			}

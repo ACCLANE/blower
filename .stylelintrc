@@ -22,7 +22,7 @@
 		"declaration-colon-space-after": "always-single-line",
 		"declaration-colon-newline-after": "always-multi-line",
 		"number-leading-zero": "never",
-		"function-url-quotes": "always",
+		"function-url-quotes": "never",
 		"font-family-name-quotes": "always-where-required",
 		"comment-whitespace-inside": "always",
 		"comment-empty-line-before": "always",
