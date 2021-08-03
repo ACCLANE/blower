@@ -1,0 +1,8 @@
+@function globalOrLocal($global, $local) {
+	// Prefer module config when not equal to global config
+	@if $global != $local {
+		@return $local;
+	}
+
+	@return true;
+}
