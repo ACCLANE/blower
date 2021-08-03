@@ -11,9 +11,10 @@
 	"private": true,
 	"scripts": {
 		"copyToDocs": "rm -rf docs/public/css/* && cp -Rf dist/css/* docs/public/css",
-		"watch": "sass scss/blower.scss dist/css/blower.css --watch",
+		"watch": "sass --watch scss/blower.scss dist/css/blower.css",
+		"watchDocs": "sass --watch scss/blower.scss docs/public/css/blower.css",
 		"build": "sass scss/blower.scss dist/css/blower.css && npm run copyToDocs",
-		"prod": "sass scss/blower.scss dist/css/blower.css --no-source-map && sass scss/blower.scss dist/css/blower.min.css --no-source-map --style compressed && npm run copyToDocs",
+		"prod": "sass --no-source-map scss/blower.scss dist/css/blower.css && sass --no-source-map --style=compressed scss/blower.scss dist/css/blower.min.css && npm run copyToDocs",
 		"lint": "stylelint '**/*.scss'",
 		"lint-fix": "stylelint '**/*.scss' --fix"
 	},
