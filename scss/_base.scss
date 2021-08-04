@@ -2,22 +2,6 @@
 @use 'variables/color';
 @use 'functions' as fn;
 
-// Normalization of HTML elements
-* {
-	margin: 0;
-	padding: 0;
-}
-
-*,
-*::before,
-*::after {
-	box-sizing: inherit;
-}
-
-html {
-	box-sizing: border-box;
-}
-
 html,
 body {
 	font-family: if(font.$primary not null, font.$primary, ''), font.$fallback;
