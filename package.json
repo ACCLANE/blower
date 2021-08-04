@@ -1,6 +1,6 @@
 {
 	"name": "blower",
-	"description": "A frontend framework based on SCSS and CSS Variables.",
+	"description": "A frontend framework based on SCSS modules and CSS variables.",
 	"main": "blower.css",
 	"style": "blower.css",
 	"homepage": "https://blower.dev",

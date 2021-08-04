@@ -2,7 +2,7 @@
 
 # Blower Frontend-Framework
 
-A frontend framework based on SCSS and CSS Variables.
+A frontend framework based on SCSS modules and CSS variables.
 
 ## (S)CSS-Variable-Scheme
 Values with a `?` after them are optional.
