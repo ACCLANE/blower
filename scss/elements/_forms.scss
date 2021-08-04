@@ -40,8 +40,6 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 		outline: none;
 		border: var(--width-border) solid var(--color-border);
 		appearance: none;
-		-webkit-appearance: none;
-		-moz-appearance: none;
 
 		@if fn.globalOrLocal(global-config.$rounded, $rounded) {
 			border-radius: base.$corner-radius;
@@ -286,8 +284,6 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 		--size-thumb: 1rem;
 
 		appearance: none;
-		-webkit-appearance: none;
-		-moz-appearance: none;
 		background-color: transparent; // Mozilla need this
 
 		&::-webkit-slider-runnable-track {
@@ -305,8 +301,6 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 			border-color: transparent; // Mozilla need this
 			border-width: 0; // Mozilla need this
 			appearance: none;
-			-webkit-appearance: none;
-			-moz-appearance: none;
 		}
 
 		&::-moz-range-track {

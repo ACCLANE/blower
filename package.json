@@ -11,8 +11,10 @@
 	"private": true,
 	"scripts": {
 		"copyToDocs": "rm -rf docs/public/css/* && cp -Rf dist/css/* docs/public/css",
-		"watch": "sass --watch scss/blower.scss dist/css/blower.css && postcss dist/css/*.css --dir dist/css/ --watch --use autoprefixer",
-		"watchDocs": "sass --watch scss/blower.scss docs/public/css/blower.css && postcss dist/css/*.css --dir docs/public/css/ --watch --use autoprefixer",
+		"watch": "sass --watch scss/blower.scss dist/css/blower.css && npm run watchAutoprefixer",
+		"watchDocs": "sass --watch scss/blower.scss docs/public/css/blower.css && npm run watchDocsAutoprefixer",
+		"watchAutoprefixer": "postcss dist/css/*.css --dir dist/css/ --watch --use autoprefixer",
+		"watchDocsAutoprefixer": "postcss docs/public/css/*.css --dir docs/public/css/ --watch --use autoprefixer",
 		"build": "sass scss/blower.scss dist/css/blower.css && postcss dist/css/*.css --dir dist/css/ --use autoprefixer && npm run copyToDocs",
 		"prod": "sass --no-source-map scss/blower.scss dist/css/blower.css && sass --no-source-map --style=compressed scss/blower.scss dist/css/blower.min.css && && postcss dist/css/*.css --dir dist/css/ --use autoprefixer && npm run copyToDocs",
 		"lint": "stylelint '**/*.scss'",
@@ -22,7 +24,7 @@
 		"autoprefixer": "^10.3.1",
 		"postcss": "^8.3.6",
 		"postcss-cli": "^8.3.1",
-		"sass": "^1.37.2",
+		"sass": "^1.37.5",
 		"stylelint": "^13.13.1"
 	}
 }
