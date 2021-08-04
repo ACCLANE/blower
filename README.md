@@ -1,3 +1,5 @@
+![GitHub file size in bytes](https://img.shields.io/github/size/ACCLANE/blower/dist/css/blower.min.css?label=.min.css%20size&style=flat-square) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/ACCLANE/blower/develop?label=last%20dev%20commit&style=flat-square)
+
 # Blower Frontend-Framework
 
 A frontend framework based on SCSS and CSS Variables.
