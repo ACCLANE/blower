@@ -1,27 +1,27 @@
 # Blower Frontend-Framework
 
-Ein auf SCSS basierendes Frontend-Framework.
+A frontend framework based on SCSS and CSS Variables.
 
-## CSS-Variablen-Schema
-Werte mit einem `?` dahinter sind optional.
+## (S)CSS-Variable-Scheme
+Values with a `?` after them are optional.
 
 **CSS Custom Properties:** `--{object?}-{function}-{specifics?}`  
 **SCSS-Variablen:** `{namespace}.{function}-{specifics?}`
 
-_CSS & SCSS Variablen werden dementsprechend in **kebab-case** geschrieben._
+_CSS & SCSS variables are written accordingly in **kebab-case**._
 
-## Namespace Besonderheiten
-Eingebundene (`@use`) Projekt Variablendateien nutzen ihren eigenen Namespace, ohne das dieser gesondert via `as` angeben werden muss. Dies führt zu Überscheidungen mit den SASS eigenen Modulen. Daher erhalten alle SASS Module einen komplett eigenen Namespace. Folgendes Schema wird angewandt: `s-funktionsname`.
+## Namespace specifics
+Included (`@use`) project variable files use their own namespace without having to specify it separately via `as`. This leads to overlaps with the SASS modules. Therefore, all SASS modules receive their own namespace. The following scheme is applied: `s-functionname`.
 
-Ein Beispiel an Hand des Color Modules:
+An example using the color module:
 `@use 'sass:color' as s-color;`
 
-## Dateistruktur
-Standard-Ordner nach BEMIT (`components`, `objects` etc.)  
-Ordner für Mixins, Functions, Variables, Utilites je mit eigener Datei pro Segment und Master-Datei, in der alle zusammenlaufen.
+## File structure
+Standard folder according to BEMIT (`components`, `objects` etc.)
+Folders for mixins, functions, variables, utilities, each with its own file for each segment and a master file in which they all run together.
 
-## Repository-Regeln
-Vor jedem Commit wird einmal `npm run prod` ausgeführt, damit immer eine lauffähige Version im Repository ist.
+## Repository-Rules
+Before each commit, `npm run prod` is executed once so that there is always an executable version in the repository.
 
 ## Sass support
 
