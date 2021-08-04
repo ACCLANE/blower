@@ -1,11 +1,10 @@
 @use '../variables/base' as base;
 
-/// Spacing Funktion, um nur mit einer Variable arbeiten
-/// zu müssen, die man beliebig per Multiplier
-/// erhöhen oder senken kann
+/// Spacing function to only have to work with one variable,
+/// which can be increased or decreased as desired by multiplier.
 ///
-/// @param Number $multiplier
-/// @returns String — Wert in Pixeln
+/// @param {Number} $multiplier
+/// @return {String} — Value in pixel
 @function spacing($multiplier: 1) {
 	@return base.$spacer * $multiplier;
 }

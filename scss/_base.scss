@@ -18,7 +18,7 @@ body {
 	color: #FFF;
 }
 
-/// Konvertiert alle SCSS Farbvariablen in CSS Variablen und fügt sie dem :root hinzu
+/// Convert all SCSS color variables to CSS variables and add them to the :root
 $all-colors: fn.map-collect(color.$theme-colors, color.$link-colors, color.$grays);
 
 :root {
