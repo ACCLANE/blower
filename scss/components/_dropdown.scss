@@ -1,8 +1,13 @@
 @use '../functions' as fn;
+@use '../variables/base';
 @use '../variables/color';
 @use '../variables/font';
 @use '../variables/transition';
 @use '../placeholders';
+@use '../variables/global-config';
+
+/// Module config
+$rounded: true !default;
 
 .c-dropdown {
 	position: relative;
@@ -14,6 +19,10 @@
 	&__toggle {
 		display: flex;
 		align-items: center;
+
+		@if fn.global-or-local(global-config.$rounded, $rounded) == false {
+			border-radius: 0;
+		}
 	}
 
 	&__menu {
@@ -33,9 +42,12 @@
 		padding: var(--spacing-vertical) 0;
 		background-color: var(--color-background);
 		min-width: var(--width-min);
-		border-radius: 4px;
 		border: var(--width-border) var(--style-border) var(--color-border);
 		margin-top: 2px;
+
+		@if fn.global-or-local(global-config.$rounded, $rounded) {
+			border-radius: 4px;
+		}
 
 		&.is-active {
 			--opacity: 1;

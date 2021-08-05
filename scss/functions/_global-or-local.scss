@@ -1,3 +1,5 @@
+@use 'sass:map' as s-map;
+
 /// Compares the global and module configuration.
 /// If there are not equal the module configuration will be thoosen
 /// Otherwise return true
@@ -5,7 +7,7 @@
 /// @param {String} $global - name of the global variable
 /// @param {String} $module - name of the module variable
 /// @return {Bool}
-@function globalOrLocal($global, $module) {
+@function global-or-local($global, $module) {
 	// Prefer module config when not equal to global config
 	@if $global != $module {
 		@return $module;

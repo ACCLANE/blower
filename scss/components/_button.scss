@@ -1,10 +1,14 @@
-@use 'sass:list';
+@use 'sass:list' as s-list;
 
 @use '../functions' as fn;
 @use '../variables/base';
 @use '../variables/font';
 @use '../variables/color';
 @use '../variables/transition';
+@use '../variables/global-config';
+
+/// Module config
+$rounded: true !default;
 
 $button-types: (
 	'primary',
@@ -41,7 +45,6 @@ $button-types: (
 	color: var(--color-text);
 	border: var(--width-border) var(--style-border) var(--color-border);
 	background-color: var(--color-background);
-	border-radius: base.$corner-radius;
 	font-size: var(--size-font);
 	font-family: font.$primary;
 	font-weight: 500;
@@ -51,6 +54,10 @@ $button-types: (
 	transition-duration: transition.$speed-fast;
 	text-decoration: none;
 	display: inline-block;
+
+	@if fn.global-or-local(global-config.$rounded, $rounded) {
+		border-radius: base.$corner-radius;
+	}
 
 	&:not(:disabled) {
 		cursor: pointer;
@@ -81,7 +88,7 @@ $button-types: (
 		cursor: not-allowed;
 	}
 
-	@if list.index($button-types, 'primary') {
+	@if s-list.index($button-types, 'primary') {
 
 		&--primary {
 			--color-text: #FFF;
@@ -90,7 +97,7 @@ $button-types: (
 		}
 	}
 
-	@if list.index($button-types, 'secondary') {
+	@if s-list.index($button-types, 'secondary') {
 
 		&--secondary {
 			--color-text: #FFF;
@@ -99,7 +106,7 @@ $button-types: (
 		}
 	}
 
-	@if list.index($button-types, 'success') {
+	@if s-list.index($button-types, 'success') {
 
 		&--success {
 			--color-text: #FFF;
@@ -108,7 +115,7 @@ $button-types: (
 		}
 	}
 
-	@if list.index($button-types, 'danger') {
+	@if s-list.index($button-types, 'danger') {
 
 		&--danger {
 			--color-text: #FFF;
@@ -117,7 +124,7 @@ $button-types: (
 		}
 	}
 
-	@if list.index($button-types, 'warning') {
+	@if s-list.index($button-types, 'warning') {
 
 		&--warning {
 			--color-text: #000;
@@ -126,7 +133,7 @@ $button-types: (
 		}
 	}
 
-	@if list.index($button-types, 'info') {
+	@if s-list.index($button-types, 'info') {
 
 		&--info {
 			--color-text: #FFF;
@@ -135,7 +142,7 @@ $button-types: (
 		}
 	}
 
-	@if list.index($button-types, 'outline') {
+	@if s-list.index($button-types, 'outline') {
 
 		&--outline {
 			--color-background-hover: var(--color-background);
@@ -147,7 +154,7 @@ $button-types: (
 		}
 	}
 
-	@if list.index($button-types, 'large') {
+	@if s-list.index($button-types, 'large') {
 
 		&--large {
 			--spacing-inner-vertical: #{fn.spacing(1.25)};
@@ -155,7 +162,7 @@ $button-types: (
 		}
 	}
 
-	@if list.index($button-types, 'small') {
+	@if s-list.index($button-types, 'small') {
 
 		&--small {
 			--spacing-inner-vertical: #{fn.spacing(.5)};

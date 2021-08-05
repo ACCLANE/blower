@@ -1,10 +1,21 @@
+@use 'sass:list' as s-list;
+
 @use '../functions' as fn;
 @use '../mixins' as mx;
 @use '../variables/base';
 @use '../variables/color';
 @use '../variables/font';
+@use '../variables/global-config';
+
+/// Module config
+$rounded: true !default;
+
+$card-types: (
+	'horizontal'
+) !default;
 
 .c-card {
+
 	--spacing-inner: #{fn.spacing(1.5)};
 	--spacing-elements: #{fn.spacing()};
 	--color-background: #FFF;
@@ -21,8 +32,11 @@
 	color: var(--color-text);
 	border: var(--width-border) var(--style-border) var(--color-border);
 	background-color: var(--color-background);
-	border-radius: var(--corner-radius);
 	max-width: max-content;
+
+	@if fn.global-or-local(global-config.$rounded, $rounded) {
+		border-radius: base.$corner-radius;
+	}
 
 	&__image,
 	&__title,
@@ -52,28 +66,32 @@
 		color: var(--color-text-footer);
 	}
 
-	&--horizontal {
-		--size-image: 100px;
-		--size-text: #{font.$text-s};
+	@if s-list.index($card-types, 'horizontal') {
 
-		display: grid;
-		grid-template-columns: var(--size-image) 1fr;
-		gap: var(--spacing-inner);
+		&--horizontal {
+			--size-image: 100px;
+			--size-text: #{font.$text-s};
 
-		.c-card__image {
-			width: var(--size-image);
-			height: var(--size-image);
-			object-fit: cover;
-			margin-bottom: 0;
-		}
+			display: grid;
+			grid-template-columns: var(--size-image) 1fr;
+			gap: var(--spacing-inner);
 
-		.c-card__text {
-			margin-bottom: 0;
-			line-height: 1.25;
-		}
+			.c-card__image {
+				width: var(--size-image);
+				height: var(--size-image);
+				object-fit: cover;
+				margin-bottom: 0;
+			}
 
-		.c-card__footer {
-			display: none;
+			.c-card__text {
+				margin-bottom: 0;
+				line-height: 1.25;
+			}
+
+			.c-card__footer {
+				display: none;
+			}
 		}
 	}
+
 }

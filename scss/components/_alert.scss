@@ -1,6 +1,20 @@
+@use 'sass:list' as s-list;
+
 @use '../functions' as fn;
 @use '../variables/color';
 @use '../variables/base';
+@use '../variables/global-config';
+
+/// Module config
+$rounded: true !default;
+
+$alert-types: (
+	'primary',
+	'success',
+	'danger',
+	'warning',
+	'info',
+) !default;
 
 .c-alert {
 	--spacing-inner-vertical: #{fn.spacing(1.5)};
@@ -19,8 +33,11 @@
 	color: var(--color-text);
 	border: var(--width-border) var(--style-border) var(--color-border);
 	background-color: var(--color-background);
-	border-radius: base.$corner-radius;
 	font-size: var(--size-font);
+
+	@if fn.global-or-local(global-config.$rounded, $rounded) {
+		border-radius: base.$corner-radius;
+	}
 
 	&:not(:first-child) {
 		margin-top: var(--spacing-outer-vertical);
@@ -44,34 +61,49 @@
 		margin-right: var(--spacing-inner-vertical);
 	}
 
-	&--primary {
-		--color-text: #084298;
-		--color-border: #B6D4FE;
-		--color-background: #CFE2FF;
+	@if s-list.index($alert-types, 'primary') {
+
+		&--primary {
+			--color-text: #084298;
+			--color-border: #B6D4FE;
+			--color-background: #CFE2FF;
+		}
 	}
 
-	&--success {
-		--color-text: #0F5132;
-		--color-border: #BADBCC;
-		--color-background: #D1E7DD;
+	@if s-list.index($alert-types, 'success') {
+
+		&--success {
+			--color-text: #0F5132;
+			--color-border: #BADBCC;
+			--color-background: #D1E7DD;
+		}
 	}
 
-	&--danger {
-		--color-text: #842029;
-		--color-border: #F5C2C7;
-		--color-background: #F8D7DA;
+	@if s-list.index($alert-types, 'danger') {
+
+		&--danger {
+			--color-text: #842029;
+			--color-border: #F5C2C7;
+			--color-background: #F8D7DA;
+		}
 	}
 
-	&--warning {
-		--color-text: #664D03;
-		--color-border: #FFECB5;
-		--color-background: #FFF3CD;
+	@if s-list.index($alert-types, 'warning') {
+
+		&--warning {
+			--color-text: #664D03;
+			--color-border: #FFECB5;
+			--color-background: #FFF3CD;
+		}
 	}
 
-	&--info {
-		--color-text: #055160;
-		--color-border: #B6EFFB;
-		--color-background: #CFF4FC;
+	@if s-list.index($alert-types, 'info') {
+
+		&--info {
+			--color-text: #055160;
+			--color-border: #B6EFFB;
+			--color-background: #CFF4FC;
+		}
 	}
 
 	&.has-icon {

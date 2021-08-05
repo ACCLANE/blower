@@ -1,8 +1,8 @@
-@forward 'components/alert';
-@forward 'components/button';
-@forward 'components/card';
+@forward 'components/alert' hide $rounded;
+@forward 'components/button' hide $rounded; // TODO: maybe the @use function is a better way
+@forward 'components/card' hide $rounded;
 @forward 'components/list-navigation';
-@forward 'components/toast';
+@forward 'components/toast' hide $rounded;
 @forward 'components/tooltip';
-@forward 'components/dropdown';
+@forward 'components/dropdown' hide $rounded;
 @forward 'components/input-group';

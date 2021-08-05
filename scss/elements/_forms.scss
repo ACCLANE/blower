@@ -8,10 +8,10 @@
 @use '../variables/global-config';
 @use '../components/button';
 
-// Module Config
+/// Module config
 $rounded: true !default;
 
-// Module Variables
+/// Module variables
 $icon-color: currentColor;
 $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#{$icon-color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>";
 
@@ -41,7 +41,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 		border: var(--width-border) solid var(--color-border);
 		appearance: none;
 
-		@if fn.globalOrLocal(global-config.$rounded, $rounded) {
+		@if fn.global-or-local(global-config.$rounded, $rounded) {
 			border-radius: base.$corner-radius;
 		}
 
@@ -180,7 +180,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 
 		&:not(.u-switch) {
 
-			@if fn.globalOrLocal(global-config.$rounded, $rounded) {
+			@if fn.global-or-local(global-config.$rounded, $rounded) {
 				border-radius: 3px;
 			}
 
@@ -205,7 +205,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 
 		&.u-switch {
 			width: 38px;
-			@if fn.globalOrLocal(global-config.$rounded, $rounded) {
+			@if fn.global-or-local(global-config.$rounded, $rounded) {
 				border-radius: 11px;
 			}
 
@@ -219,7 +219,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 				background: var(--color-background-after, var(--color-background));
 				transform: translateX(var(--translate-x, 0));
 
-				@if fn.globalOrLocal(global-config.$rounded, $rounded) {
+				@if fn.global-or-local(global-config.$rounded, $rounded) {
 					border-radius: 50%;
 				}
 			}
