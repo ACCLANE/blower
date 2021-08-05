@@ -78,13 +78,13 @@ $rounded: true !default;
 			--cursor: pointer;
 
 			&:hover {
-				background: var(--color-background-hover);
-				color: var(--color-text-hover);
+				--color-background: var(--color-background-hover);
+				--color-text: var(--color-text-hover);
 			}
 
 			&:active {
-				background: var(--color-background-active);
-				color: var(--color-text-active);
+				--color-background: var(--color-background-active);
+				--color-text: var(--color-text-active);
 			}
 		}
 
