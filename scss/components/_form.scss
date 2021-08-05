@@ -1,0 +1,34 @@
+@use '../functions' as fn;
+@use '../variables/font';
+
+.c-form {
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&:not(:last-child) {
+			margin-bottom: fn.spacing(2);
+		}
+
+		label {
+			order: -1;
+			margin-right: fn.spacing();
+			font-size: font.$text-m;
+			font-weight: 700;
+		}
+
+		&.is-vertical {
+			flex-direction: column;
+			align-items: flex-start;
+
+			label {
+				margin: {
+					right: 0;
+					bottom: fn.spacing(.5);
+				};
+			}
+		}
+	}
+}
