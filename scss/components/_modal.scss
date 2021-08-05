@@ -1,0 +1,15 @@
+@use 'sass:list' as s-list;
+
+@use '../functions' as fn;
+@use '../variables/base';
+@use '../variables/font';
+@use '../variables/color';
+@use '../variables/transition';
+@use '../variables/global-config';
+
+/// Module config
+$rounded: true !default;
+
+.c-modal {
+
+}
