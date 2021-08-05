@@ -1,7 +1,7 @@
 @use '../variables/color';
 @use '../variables/transition';
 
-a {
+a:not([class]) {
 	color: var(--link-default);
 	transition: color transition.$speed-fast;
 

@@ -15,14 +15,8 @@
 		right: fn.negate(var(--spacing-inner));
 	};
 
-	&__item {
-
-		a {
-			color: currentColor;
-		}
-	}
-
 	&__link {
+		--color-link-text: #FFF;
 		--color-link-background: transparent;
 
 		display: block;
@@ -32,6 +26,7 @@
 		border-radius: base.$corner-radius;
 		transition-property: color, background-color;
 		transition-duration: transition.$speed-fast;
+		color: var(--color-link-text);
 
 		&.is-active {
 			--color-link-background: rgba(255, 255, 255, .08);
