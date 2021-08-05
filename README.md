@@ -1,8 +1,26 @@
-![GitHub file size in bytes](https://img.shields.io/github/size/ACCLANE/blower/dist/css/blower.min.css?label=.min.css%20size&style=flat-square) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/ACCLANE/blower/develop?label=last%20dev%20commit&style=flat-square)
+![](./blower-logo.svg "Blower Logo")
+
+<img height="auto" src="./blower-logo.svg" width="300" alt="Blower Logo"/>
 
 # Blower Frontend-Framework
 
 A frontend framework based on SCSS modules and CSS variables.
+
+## Stats
+
+![GitHub file size in bytes](https://img.shields.io/github/size/ACCLANE/blower/dist/css/blower.min.css?label=.min.css%20size&style=flat-square) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/ACCLANE/blower/develop?label=last%20dev%20commit&style=flat-square)
+
+## Requirements
+
+Your project have to use [Dart Sass](https://sass-lang.com/dart-sass) >= 1.35.
+
+### Sass support
+
+| Sass Compiler | Support |
+| ------------- | ------- |
+| Dart Sass     | ✅      |
+| Lib Sass      | ❌      |
+| Ruby Sass     | ⚰️      |
 
 ## Install Blower
 
@@ -22,7 +40,7 @@ There are two configuration levels that can be used independently of each other.
 
 ```scss
 @use '~/blower/components/button' as blower-buttons with (
-	$rounded: false, // all button without rounded edges. The remaining components depend on the global configuration.
+	$rounded: false, /// all buttons without rounded edges. The remaining components depend on the global configuration.
 	$button-types: ( /// only include 3 button types
 		'primary',
 		'secondary',
@@ -53,11 +71,3 @@ Folders for mixins, functions, variables, utilities, each with its own file for 
 
 ### Repository-Rules
 Before each commit, `npm run prod` is executed once so that there is always an executable version in the repository.
-
-## Sass support
-
-| Sass Compiler | Support |
-| ------------- | ------- |
-| Dart Sass     | ✅      |
-| Lib Sass      | ❌      |
-| Ruby Sass     | ⚰️      |
