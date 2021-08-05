@@ -1,6 +1,7 @@
 @use '../functions' as fn;
-@use '../variables/color' as color;
-@use '../variables/font' as font;
+@use '../variables/color';
+@use '../variables/font';
+@use '../variables/transition';
 
 .o-sidebar {
 	--spacing-content-horizontal: #{fn.spacing(3)};
@@ -12,6 +13,8 @@
 
 	background-color: var(--color-background);
 	color: var(--color-text);
+	display: flex;
+	flex-direction: column;
 
 	& > * {
 		padding: var(--spacing-content-vertical) var(--spacing-content-horizontal);
@@ -46,6 +49,20 @@
 			font-size: font.$text-m;
 			text-transform: uppercase;
 			color: var(--color-text);
+		}
+	}
+
+	&__footer {
+		background-color: var(--color-background-header);
+		margin-top: auto;
+		color: var(--color-text);
+		display: block;
+		text-align: center;
+		text-decoration: none;
+		transition: background-color transition.$speed-fast;
+
+		&:hover {
+			background-color: color.$gray-900;
 		}
 	}
 
