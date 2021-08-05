@@ -152,7 +152,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 			box-shadow: 0 0 0 var(--box-shadow-focus);
 		}
 
-		&:not(.u-switch) {
+		&:not(.c-switch) {
 			width: 21px;
 
 			&::after {
@@ -178,7 +178,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 
 	input[type='checkbox' i] {
 
-		&:not(.u-switch) {
+		&:not(.c-switch) {
 
 			@if fn.global-or-local(global-config.$rounded, $rounded) {
 				border-radius: 3px;
@@ -200,43 +200,6 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 
 			&:checked {
 				--rotate: 43deg;
-			}
-		}
-
-		&.u-switch {
-			width: 38px;
-			@if fn.global-or-local(global-config.$rounded, $rounded) {
-				border-radius: 11px;
-			}
-
-			&::after {
-				--color-background: #{color.$gray-500};
-
-				left: 2px;
-				top: 2px;
-				width: 15px;
-				height: 15px;
-				background: var(--color-background-after, var(--color-background));
-				transform: translateX(var(--translate-x, 0));
-
-				@if fn.global-or-local(global-config.$rounded, $rounded) {
-					border-radius: 50%;
-				}
-			}
-
-			&:checked {
-				--color-background-after: #FFF;
-				--translate-x: 17px;
-			}
-
-			&:disabled {
-
-				&:not(:checked) {
-
-					&::after {
-						opacity: .6;
-					}
-				}
 			}
 		}
 	}

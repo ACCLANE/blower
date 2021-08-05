@@ -1,0 +1,43 @@
+@use '../functions' as fn;
+@use '../variables/global-config';
+@use '../variables/color';
+
+/// Module config
+$rounded: true !default;
+
+input[type='checkbox'].c-switch {
+	width: 38px;
+	@if fn.global-or-local(global-config.$rounded, $rounded) {
+		border-radius: 11px;
+	}
+
+	&::after {
+		--color-background: #{color.$gray-500};
+
+		left: 2px;
+		top: 2px;
+		width: 15px;
+		height: 15px;
+		background: var(--color-background-after, var(--color-background));
+		transform: translateX(var(--translate-x, 0));
+
+		@if fn.global-or-local(global-config.$rounded, $rounded) {
+			border-radius: 50%;
+		}
+	}
+
+	&:checked {
+		--color-background-after: #FFF;
+		--translate-x: 17px;
+	}
+
+	&:disabled {
+
+		&:not(:checked) {
+
+			&::after {
+				opacity: .6;
+			}
+		}
+	}
+}
