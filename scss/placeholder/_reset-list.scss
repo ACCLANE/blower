@@ -1,3 +1,7 @@
+/// Hint: Placeholder Selectors have no namespace and are global avialable.
+/// @link: https://sass-lang.com/documentation/style-rules/placeholder-selectors
+
+/// Remove the typical list styles
 %reset-list {
 	--spacing-indentation: 0;
 	--spacing-list-items: 0;

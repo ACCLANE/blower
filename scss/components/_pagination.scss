@@ -1,0 +1,83 @@
+@use 'sass:list' as s-list;
+
+@use '../functions' as fn;
+@use '../variables/base';
+@use '../variables/font';
+@use '../variables/color';
+@use '../variables/transition';
+@use '../variables/global-config';
+@use '../placeholders';
+
+/// Module config
+$rounded: true !default;
+
+.c-pagination {
+	@extend %reset-list;
+
+	--spacing-link-vertical: #{fn.spacing(.7)};
+	--spacing-link-horizontal: #{fn.spacing(1.3)};
+	--color-background-link: #FFF;
+	--color-background-link-active: var(--theme);
+	--color-link: var(--theme);
+	--color-link-active: #FFF;
+	--color-border-link: var(--gray-600);
+	--color-border-link-active: var(--theme);
+	--width-border-link: 1px;
+	--style-border-link: solid;
+
+	display: flex;
+
+	&__item {
+
+		/// Hide the neighbor borders
+		&:not(:first-child) {
+			margin-left: -1px;
+		}
+
+		@if fn.global-or-local(global-config.$rounded, $rounded) {
+
+			&:first-child {
+
+				.c-pagination__link {
+					border-top-left-radius: base.$corner-radius;
+					border-bottom-left-radius: base.$corner-radius;
+				}
+			}
+
+			&:last-child {
+
+				.c-pagination__link {
+					border-top-right-radius: base.$corner-radius;
+					border-bottom-right-radius: base.$corner-radius;
+				}
+			}
+		}
+
+	}
+
+	&__link {
+		background-color: var(--color-background-link);
+		padding: var(--spacing-link-vertical) var(--spacing-link-horizontal);
+		text-decoration: none;
+		color: var(--color-link);
+		border: var(--width-border-link) var(--style-border-link) var(--color-border-link);
+		display: block;
+
+		&.is-active {
+			--color-background-link: var(--color-background-link-active);
+			--color-link: var(--color-link-active);
+			--color-border-link: var(--color-border-link-active);
+		}
+
+		&.is-disabled {
+			--color-background-link: var(--gray-200);
+			--color-link: var(--gray-600);
+
+			cursor: not-allowed;
+
+			&:hover {
+				--color-link: var(--gray-600);
+			}
+		}
+	}
+}
