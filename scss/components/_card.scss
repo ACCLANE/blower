@@ -15,7 +15,6 @@ $card-types: (
 ) !default;
 
 .c-card {
-
 	--spacing-inner: #{fn.spacing(1.5)};
 	--spacing-elements: #{fn.spacing()};
 	--color-background: #FFF;
@@ -93,5 +92,4 @@ $card-types: (
 			}
 		}
 	}
-
 }
