@@ -74,10 +74,6 @@ $rounded: true !default;
 			--color-link: var(--gray-600);
 
 			cursor: not-allowed;
-
-			&:hover {
-				--color-link: var(--gray-600);
-			}
 		}
 	}
 }
