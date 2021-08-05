@@ -1,0 +1,10 @@
+@use '../functions' as fn;
+@use '../variables/color';
+
+.blower--centered {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: color.$gray-200;
+}

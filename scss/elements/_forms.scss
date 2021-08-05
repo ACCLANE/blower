@@ -334,9 +334,9 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 			}
 		}
 
-
 		&::file-selector-button {
-			@extend .c-button;
+			// FIXME: Herausfinden, warum die gesamte .c-button Klasse entfernt wird, wenn dieses Pseudo-Element extended wird — Autoprefixer
+			// @extend .c-button;
 
 			--width-border: 0;
 
@@ -352,7 +352,7 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 		--spacing-inner: #{fn.spacing(.750)} #{fn.spacing(4.5)} #{fn.spacing(.750)} #{fn.spacing(1.5)};
 
 		background: {
-			image: url(fn.escape-svg($icon-chevron-down));
+			image: url('#{fn.escape-svg($icon-chevron-down)}');
 			repeat: no-repeat;
 			position: right fn.spacing(1.5) center;
 			size: 16px 12px;
