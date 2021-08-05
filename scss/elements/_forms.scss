@@ -334,9 +334,9 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 			}
 		}
 
-
 		&::file-selector-button {
-			@extend .c-button;
+			// FIXME: Herausfinden, warum die gesamte .c-button Klasse entfernt wird, wenn dieses Pseudo-Element extended wird — Autoprefixer
+			// @extend .c-button;
 
 			--width-border: 0;
 
