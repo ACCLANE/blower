@@ -4,7 +4,36 @@
 
 A frontend framework based on SCSS modules and CSS variables.
 
-## (S)CSS-Variable-Scheme
+## Install Blower
+
+```bash
+npm install https://github.com/ACCLANE/blower.git (#commit, #branch or #(release)tag)
+```
+
+## Choose what you need
+
+"Blower" is modular and gives you full choice of which modules to include in your project.
+There are two configuration levels that can be used independently of each other.
+
+1. The global configuration file `variable/_global-config.scss`. Here you find general settings.
+2. Each component, module ect. comes with its own configuration variables, maps or lists. These can be customized with the new `@use` function together `with()`.
+
+### Usage example
+
+```scss
+@use '~/blower/components/button' as blower-buttons with (
+	$rounded: false, // all button without rounded edges. The remaining components depend on the global configuration.
+	$button-types: ( /// only include 3 button types
+		'primary',
+		'secondary',
+		'success',
+	),
+);
+```
+
+## Development instructions
+
+### (S)CSS-Variable-Scheme
 Values with a `?` after them are optional.
 
 **CSS Custom Properties:** `--{object?}-{function}-{specifics?}`  
@@ -12,17 +41,17 @@ Values with a `?` after them are optional.
 
 _CSS & SCSS variables are written accordingly in **kebab-case**._
 
-## Namespace specifics
+### Namespace specifics
 Included (`@use`) project variable files use their own namespace without having to specify it separately via `as`. This leads to overlaps with the SASS modules. Therefore, all SASS modules receive their own namespace. The following scheme is applied: `s-functionname`.
 
 An example using the color module:
 `@use 'sass:color' as s-color;`
 
-## File structure
+### File structure
 Standard folder according to BEMIT (`components`, `objects` etc.)
 Folders for mixins, functions, variables, utilities, each with its own file for each segment and a master file in which they all run together.
 
-## Repository-Rules
+### Repository-Rules
 Before each commit, `npm run prod` is executed once so that there is always an executable version in the repository.
 
 ## Sass support
