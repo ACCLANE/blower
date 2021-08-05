@@ -17,6 +17,7 @@ $rounded: true !default;
 	--spacing-link-vertical: #{fn.spacing(.7)};
 	--spacing-link-horizontal: #{fn.spacing(1.3)};
 	--color-background-link: #FFF;
+	--color-background-link-hover: var(--gray-200);
 	--color-background-link-active: var(--theme);
 	--color-link: var(--theme);
 	--color-link-active: #FFF;
@@ -62,6 +63,14 @@ $rounded: true !default;
 		color: var(--color-link);
 		border: var(--width-border-link) var(--style-border-link) var(--color-border-link);
 		display: block;
+		transition: background-color transition.$speed ease-in-out;
+
+		&:not(.is-disabled):not(.is-active) {
+
+			&:hover {
+				--color-background-link: var(--color-background-link-hover);
+			}
+		}
 
 		&.is-active {
 			--color-background-link: var(--color-background-link-active);
