@@ -20,7 +20,7 @@
 		"watchAutoprefixer": "postcss dist/css/*.css --dir dist/css/ --watch --use autoprefixer",
 		"watchDocsAutoprefixer": "postcss docs/public/css/*.css --dir docs/public/css/ --watch --use autoprefixer",
 		"build": "sass scss/blower.scss dist/css/blower.css && postcss dist/css/*.css --dir dist/css/ --use autoprefixer && npm run copyToDocs",
-		"prod": "sass --no-source-map scss/blower.scss dist/css/blower.css && sass --no-source-map --style=compressed scss/blower.scss dist/css/blower.min.css && && postcss dist/css/*.css --dir dist/css/ --use autoprefixer && npm run copyToDocs",
+		"prod": "sass --no-source-map scss/blower.scss dist/css/blower.css && sass --no-source-map --style=compressed scss/blower.scss dist/css/blower.min.css && postcss dist/css/*.css --dir dist/css/ --use autoprefixer && npm run copyToDocs",
 		"lint": "stylelint '**/*.scss'",
 		"lint-fix": "stylelint '**/*.scss' --fix"
 	},
