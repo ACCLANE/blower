@@ -1,7 +1,18 @@
 @use '../functions' as fn;
+@use '../mixins' as mx;
 
 .blower--dashboard {
+	--size-sidebar: 215px;
+
 	display: grid;
-	grid-template-columns: 300px 1fr;
+	grid-template-columns: var(--size-sidebar) 1fr;
 	min-height: 100vh;
+
+	@include mx.breakpoint(md) {
+		--size-sidebar: 250px;
+	}
+
+	@include mx.breakpoint(lg) {
+		--size-sidebar: 300px;
+	}
 }
