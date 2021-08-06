@@ -47,6 +47,13 @@
 		padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
 	}
 
+	&__button {
+		@extend %merge-input-group-borders;
+
+		--color-border: var(--gray-600);
+		--color-text-hover: #FFF;
+	}
+
 	&__input {
 		@extend %merge-input-group-borders;
 
