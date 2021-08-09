@@ -20,7 +20,7 @@ $rounded: true !default;
 		display: flex;
 		align-items: center;
 
-		@if fn.global-or-local(global-config.$rounded, $rounded) == false {
+		@if not fn.global-or-local(global-config.$rounded, $rounded) {
 			border-radius: 0;
 		}
 	}

@@ -1,6 +1,7 @@
 @use 'sass:list' as s-list;
 
 @use '../functions' as fn;
+@use '../mixins' as mx;
 @use '../variables/base';
 @use '../variables/font';
 @use '../variables/color';
@@ -8,8 +9,93 @@
 @use '../variables/global-config';
 
 /// Module config
-$rounded: true !default;
+$rounded: false !default;
 
 .c-modal {
+	--display: none;
+	--z-index: 1000;
+	--color-background-overlay: rgba(0,0,0, .5);
 
+	display: var(--display);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: #{base.$z-index-modal};
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: var(--color-background-overlay);
+
+	&__item {
+		--width-max: 500px;
+		--color-background: #FFF;
+
+		background-color: var(--color-background);
+
+		@include mx.breakpoint('xs') {
+			max-width: var(--width-max);
+		}
+
+		@if fn.global-or-local(global-config.$rounded, $rounded) {
+			border-radius: base.$corner-radius;
+		}
+	}
+
+	&__content {
+
+	}
+
+	&__close {
+		//margin: calc(var(--spacing-inner-vertical) * -1) calc(var(--spacing-inner-horizontal) * -1) auto auto;
+
+		@if not fn.global-or-local(global-config.$rounded, $rounded) {
+			border-radius: 0;
+		}
+	}
+
+	&__title {
+		margin-bottom: 0;
+	}
+
+	&__header {
+		--spacing-inner-vertical: #{fn.spacing(.8)};
+		--spacing-inner-horizontal: #{fn.spacing(1.2)};
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+	}
+
+	&__body {
+		--spacing-inner-vertical: #{fn.spacing(1.2)};
+		--spacing-inner-horizontal: #{fn.spacing(1.2)};
+
+		padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+	}
+
+	&__footer {
+		--spacing-inner-vertical: #{fn.spacing(1.2)};
+		--spacing-inner-horizontal: #{fn.spacing(1.2)};
+
+		padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+	}
+
+	&.has-fade {
+		--opacity: 0;
+
+		opacity: var(--opacity);
+	}
+
+	&.is-active {
+		--display: block;
+	}
+
+	&.is-centered-top {
+
+		.c-modal__item {
+			margin: fn.spacing() auto;
+		}
+	}
 }
