@@ -1,17 +1,34 @@
 @use '../functions' as fn;
-@use '../variables/color' as color;
-@use '../variables/font' as font;
+@use '../mixins' as mx;
+@use '../variables/color';
+@use '../variables/font';
+@use '../variables/transition';
 
 .o-sidebar {
-	--spacing-content-horizontal: #{fn.spacing(3)};
+	--spacing-content-horizontal: #{fn.spacing(2)};
 	--spacing-content-vertical: #{fn.spacing(1.5)};
 	--color-background: #{color.$gray-800};
 	--color-background-header: #{color.$gray-900};
 	--color-text: rgba(255, 255, 255, .9);
 	--color-link: #FFF;
+	--size-text: #{font.$text-s};
+	--size-headline-sidebar: #{font.$text-xl};
+	--size-headline-section: var(--size-text);
 
 	background-color: var(--color-background);
 	color: var(--color-text);
+	display: flex;
+	flex-direction: column;
+	font-size: var(--size-text);
+
+	@include mx.breakpoint(md) {
+		--size-text: #{font.$text-m};
+	}
+
+	@include mx.breakpoint(lg) {
+		--spacing-content-horizontal: #{fn.spacing(3)};
+		--size-headline-sidebar: #{font.$headline-s};
+	}
 
 	& > * {
 		padding: var(--spacing-content-vertical) var(--spacing-content-horizontal);
@@ -35,7 +52,7 @@
 	&__title {
 		--spacing-after: 0;
 
-		font-size: font.$headline-s;
+		font-size: var(--size-headline-sidebar);
 	}
 
 	&__section {
@@ -43,9 +60,23 @@
 		&-header {
 			--spacing-after: #{fn.spacing(.5)};
 
-			font-size: font.$text-m;
+			font-size: var(--size-headline-section);
 			text-transform: uppercase;
 			color: var(--color-text);
+		}
+	}
+
+	&__footer {
+		background-color: var(--color-background-header);
+		margin-top: auto;
+		color: var(--color-text);
+		display: block;
+		text-align: center;
+		text-decoration: none;
+		transition: background-color transition.$speed-fast;
+
+		&:hover {
+			background-color: color.$gray-900;
 		}
 	}
 
