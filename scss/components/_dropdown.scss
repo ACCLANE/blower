@@ -31,26 +31,27 @@ $rounded: true !default;
 		--color-background: #FFF;
 		--color-border: #{color.$gray-400};
 		--spacing-vertical: #{fn.spacing()};
-		--opacity: 0;
 		--width-min: 125px;
 		--width-border: 1px;
 		--style-border: solid;
 
 		position: absolute;
+		z-index: 1;
 		opacity: var(--opacity);
-		transition: transition.$speed;
+		transition: opacity transition.$speed;
 		padding: var(--spacing-vertical) 0;
 		background-color: var(--color-background);
 		min-width: var(--width-min);
 		border: var(--width-border) var(--style-border) var(--color-border);
 		margin-top: 2px;
+		display: none;
 
 		@if fn.global-or-local(global-config.$rounded, $rounded) {
 			border-radius: 4px;
 		}
 
 		&.is-active {
-			--opacity: 1;
+			display: block;
 		}
 	}
 
@@ -97,6 +98,13 @@ $rounded: true !default;
 			--color-background: #{color.$gray-400};
 			--color-text: #{color.$gray-600};
 			--cursor: not-allowed;
+		}
+	}
+
+	&.is-align-right {
+
+		.c-dropdown__menu {
+			right: 0;
 		}
 	}
 }
