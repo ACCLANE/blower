@@ -1,7 +1,10 @@
 @use '../functions' as fn;
+@use '../mixins' as mx;
 @use '../variables/font';
 
 .c-form {
+	width: 100%;
+	max-width: 1200px;
 
 	&__item {
 		display: flex;
@@ -29,6 +32,40 @@
 					bottom: fn.spacing(.5);
 				};
 			}
+		}
+
+		> * {
+			width: 100%;
+		}
+
+		input:not([type='range' i]),
+		textarea,
+		select {
+			--spacing-inner: #{fn.spacing()};
+		}
+	}
+
+	&__group {
+
+		.c-form__item {
+			margin-bottom: fn.spacing(2);
+			flex: 1;
+
+			@include mx.breakpoint(md) {
+				margin-bottom: 0;
+			}
+
+			&:not(:last-child) {
+
+				@include mx.breakpoint(md) {
+					margin-right: fn.spacing(2);
+				}
+			}
+		}
+
+		@include mx.breakpoint(md) {
+			display: flex;
+			margin-bottom: fn.spacing(2);
 		}
 	}
 }
