@@ -60,6 +60,10 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 		}
 	}
 
+	textarea {
+		line-height: 1.35;
+	}
+
 	input[type='number' i],
 	input[type='email' i],
 	input[type='tel' i] {
