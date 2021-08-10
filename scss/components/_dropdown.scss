@@ -94,6 +94,14 @@ $rounded: true !default;
 			--color-text: #FFF;
 		}
 
+		&.is-delete {
+			--color-text: #C00;
+
+			&:hover {
+				--color-text: #700;
+			}
+		}
+
 		&.is-disabled {
 			--color-background: #{color.$gray-400};
 			--color-text: #{color.$gray-600};
