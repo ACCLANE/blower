@@ -1,6 +1,7 @@
 @use '../functions' as fn;
 @use '../mixins' as mx;
 @use '../variables/font';
+@use '../variables/color';
 
 .c-form {
 	width: 100%;
@@ -46,26 +47,34 @@
 	}
 
 	&__group {
+		display: flex;
+		flex-direction: column;
+		gap: fn.spacing(2);
+		margin-bottom: fn.spacing(2);
 
 		.c-form__item {
-			margin-bottom: fn.spacing(2);
 			flex: 1;
-
-			@include mx.breakpoint(md) {
-				margin-bottom: 0;
-			}
-
-			&:not(:last-child) {
-
-				@include mx.breakpoint(md) {
-					margin-right: fn.spacing(2);
-				}
-			}
+			margin-bottom: 0;
 		}
 
 		@include mx.breakpoint(md) {
-			display: flex;
-			margin-bottom: fn.spacing(2);
+			flex-direction: row;
+		}
+	}
+
+	&__footer {
+		display: flex;
+		flex-direction: column;
+		gap: fn.spacing();
+
+		@include mx.breakpoint(md) {
+			flex-direction: row;
+			align-items: center;
+		}
+
+		&-info {
+			color: color.$gray-700;
+			font-size: font.$text-s;
 		}
 	}
 }
