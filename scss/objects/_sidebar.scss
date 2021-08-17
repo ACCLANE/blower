@@ -67,6 +67,8 @@
 	}
 
 	&__footer {
+		position: sticky;
+		bottom: 0;
 		background-color: var(--color-background-header);
 		margin-top: auto;
 		color: var(--color-text);
