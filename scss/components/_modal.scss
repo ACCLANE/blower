@@ -9,7 +9,7 @@
 @use '../variables/global-config';
 
 /// Module config
-$rounded: false !default;
+$rounded: true !default;
 
 .c-modal {
 	--display: none;
