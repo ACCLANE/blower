@@ -92,6 +92,17 @@ $rounded: true !default;
 		--display: block;
 	}
 
+	&.is-centered {
+
+		&.is-active {
+			--display: flex;
+		}
+
+		.c-modal__item {
+			margin: auto;
+		}
+	}
+
 	&.is-centered-top {
 
 		.c-modal__item {

@@ -55,6 +55,26 @@
 		}
 	}
 
+	&__input {
+
+	}
+
+	&__label {
+
+		[required] + &,
+		[required] + &,
+		&.is-required {
+
+			&::after {
+				content: '*';
+				font-weight: 500;
+				color: color.$theme;
+				transform: translateY(-.1em);
+				display: inline-block;
+			}
+		}
+	}
+
 	&__group {
 		display: flex;
 		flex-direction: column;
