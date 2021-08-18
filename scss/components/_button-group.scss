@@ -18,5 +18,9 @@
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
 		}
+
+		&:not(:disabled):focus-visible {
+			position: relative; // Zeige den ganzen Button inklusive Box-Shadow
+		}
 	}
 }
