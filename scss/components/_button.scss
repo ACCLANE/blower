@@ -18,6 +18,7 @@ $button-types: (
 	'warning',
 	'info',
 	'outline',
+	'text',
 	'large',
 	'small',
 ) !default;
@@ -139,6 +140,18 @@ $button-types: (
 			--color-text: #FFF;
 			--color-border: #117C8D;
 			--color-background: #17A2B8;
+		}
+	}
+
+	@if s-list.index($button-types, 'text') {
+
+		&--text {
+			--color-hover: var(--color-background);
+			--width-border: 0;
+
+			background-color: transparent;
+			color: var(--color-border);
+			font-weight: 600;
 		}
 	}
 

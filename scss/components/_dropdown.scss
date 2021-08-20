@@ -20,7 +20,7 @@ $rounded: true !default;
 		display: flex;
 		align-items: center;
 
-		@if fn.global-or-local(global-config.$rounded, $rounded) == false {
+		@if not fn.global-or-local(global-config.$rounded, $rounded) {
 			border-radius: 0;
 		}
 	}
@@ -92,6 +92,14 @@ $rounded: true !default;
 		&.is-active {
 			--color-background: var(--theme);
 			--color-text: #FFF;
+		}
+
+		&.is-delete {
+			--color-text: #C00;
+
+			&:hover {
+				--color-text: #700;
+			}
 		}
 
 		&.is-disabled {

@@ -1,7 +1,11 @@
 @use '../functions' as fn;
+@use '../mixins' as mx;
 @use '../variables/font';
+@use '../variables/color';
 
 .c-form {
+	width: 100%;
+	max-width: 1200px;
 
 	&__item {
 		display: flex;
@@ -22,6 +26,7 @@
 		&.is-vertical {
 			flex-direction: column;
 			align-items: flex-start;
+			justify-content: flex-start;
 
 			label {
 				margin: {
@@ -30,5 +35,82 @@
 				};
 			}
 		}
+
+		> * {
+			width: 100%;
+		}
+
+		input:not([type='range' i]),
+		textarea,
+		select {
+			--spacing-inner: #{fn.spacing()};
+		}
+
+		&.has-error {
+
+			.c-form__input,
+			.c-form__select {
+				--color-border: #C00;
+			}
+		}
+	}
+
+	&__input {
+
+	}
+
+	&__label {
+
+		[required] + &,
+		[required] + &,
+		&.is-required {
+
+			&::after {
+				content: '*';
+				font-weight: 500;
+				color: color.$theme;
+				transform: translateY(-.1em);
+				display: inline-block;
+			}
+		}
+	}
+
+	&__group {
+		display: flex;
+		flex-direction: column;
+		gap: fn.spacing(2);
+		margin-bottom: fn.spacing(2);
+
+		.c-form__item {
+			flex: 1;
+			margin-bottom: 0;
+		}
+
+		@include mx.breakpoint(md) {
+			flex-direction: row;
+		}
+	}
+
+	&__footer {
+		display: flex;
+		flex-direction: column;
+		gap: fn.spacing();
+
+		@include mx.breakpoint(md) {
+			flex-direction: row;
+			align-items: center;
+		}
+
+		&-info {
+			color: color.$gray-700;
+			font-size: font.$text-s;
+		}
+	}
+
+	&__error {
+		color: #C00;
+		font-size: font.$text-xs;
+		margin-top: fn.spacing(.25);
+		font-weight: 500;
 	}
 }

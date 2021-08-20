@@ -45,4 +45,43 @@
 			--color-link-background: rgba(0, 0, 0, .2);
 		}
 	}
+
+	&__item {
+
+		&.has-children {
+			--color-link-background: rgba(0, 0, 0, .2);
+
+			background-color: color.$theme-dark;
+			border-radius: base.$corner-radius;
+			overflow: hidden;
+
+			.c-list-navigation__link {
+
+				&.is-active {
+					--color-link-background: rgba(255, 255, 255, .15);
+				}
+			}
+
+			& > .c-list-navigation__link.is-active {
+				--color-link-background: rgba(0, 0, 0, .1);
+
+				font-weight: 700;
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+		}
+	}
+
+	&.is-child {
+		margin: 0;
+		display: none;
+
+		.has-children & {
+			display: inherit;
+		}
+
+		.c-list-navigation__link {
+			border-radius: 0;
+		}
+	}
 }

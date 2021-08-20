@@ -1,0 +1,15 @@
+@use '../variables/color';
+@use '../variables/font';
+
+.u-close-button {
+	--color-border: transparent;
+	--color-background: transparent;
+	--spacing-inner-horizontal: var(--spacing-inner-vertical);
+	--size-font: #{font.$text-s};
+
+	&:active {
+		--color-active-text: #{color.$link-default};
+		--color-active-background: transparent;
+		--color-active-border: transparent;
+	}
+}
