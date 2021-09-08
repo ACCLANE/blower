@@ -2,7 +2,7 @@
 
 # Blower Frontend-Framework
 
-A frontend framework based on SCSS modules and CSS variables.
+A modern frontend framework based on CSS Custom Properties (also known as CSS variables) and SCSS modules so you only have to use the modules you want to use.
 
 ## Stats
 
