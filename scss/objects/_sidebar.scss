@@ -30,8 +30,15 @@
 		--size-headline-sidebar: #{font.$headline-s};
 	}
 
-	& > * {
+	& > *:not(.o-sidebar__sticky-wrap),
+	&__sticky-wrap > * {
 		padding: var(--spacing-content-vertical) var(--spacing-content-horizontal);
+	}
+
+	&__sticky-wrap {
+		position: sticky;
+		top: 0;
+		z-index: 10;
 	}
 
 	&__header {
