@@ -11,6 +11,11 @@
 /// Module config
 $rounded: true !default;
 
+$modal-types: (
+	'large',
+	'full',
+) !default;
+
 .c-modal {
 	--display: none;
 	--color-background-overlay: rgba(0,0,0, .5);
@@ -27,13 +32,17 @@ $rounded: true !default;
 	background-color: var(--color-background-overlay);
 
 	&__item {
-		--width-max: 500px;
+		--width-min: 100%;
+		--width-max: auto;
 		--color-background: #FFF;
 
 		background-color: var(--color-background);
+		max-width: var(--width-max);
+		min-width: var(--width-min);
 
 		@include mx.breakpoint('xs') {
-			max-width: var(--width-max);
+			--width-max: 450px;
+			--width-min: 500px;
 		}
 
 		@if fn.global-or-local(global-config.$rounded, $rounded) {
@@ -79,6 +88,29 @@ $rounded: true !default;
 		--spacing-inner-horizontal: #{fn.spacing(1.2)};
 
 		padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+	}
+
+	@if s-list.index($modal-types, 'large') {
+
+		&.c-modal--large {
+
+			.c-modal__item {
+				--width-max: 55%;
+				--width-min: 50%;
+			}
+		}
+	}
+
+	@if s-list.index($modal-types, 'full') {
+
+		&.c-modal--full {
+
+			.c-modal__item {
+				--width-min: 100%;
+
+				height: 100vh;
+			}
+		}
 	}
 
 	&.has-fade {
