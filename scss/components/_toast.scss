@@ -129,6 +129,20 @@ $toast-types: (
 		}
 	}
 
+	&[class*='is-type-'] {
+		--width-border: 7px;
+		--color-border: #0AF;
+
+		border-left: var(--width-border) solid var(--color-border);
+
+		&.is-type-success {
+			--color-border: #0A0;
+		}
+
+		&.is-type-danger {
+			--color-border: #A00;
+		}
+	}
 
 }
 
