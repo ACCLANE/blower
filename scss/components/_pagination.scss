@@ -19,7 +19,7 @@ $rounded: true !default;
 	--color-background-link: #FFF;
 	--color-background-link-hover: var(--gray-200);
 	--color-background-link-active: var(--theme);
-	--color-link: var(--theme);
+	--color-link: #{color.$text};
 	--color-link-active: #FFF;
 	--color-border-link: var(--gray-600);
 	--color-border-link-active: var(--theme);
@@ -65,7 +65,7 @@ $rounded: true !default;
 		display: block;
 		transition: background-color transition.$speed ease-in-out;
 
-		&:not(.is-disabled):not(.is-active) {
+		&:not(.is-disabled):not(.is-active):not(:disabled) {
 
 			&:hover {
 				--color-background-link: var(--color-background-link-hover);
@@ -76,6 +76,9 @@ $rounded: true !default;
 			--color-background-link: var(--color-background-link-active);
 			--color-link: var(--color-link-active);
 			--color-border-link: var(--color-border-link-active);
+
+			position: relative;
+			z-index: 1;
 		}
 
 		&.is-disabled {
