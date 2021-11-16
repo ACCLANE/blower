@@ -16,7 +16,7 @@
 			margin-bottom: fn.spacing(2);
 		}
 
-		label {
+		.c-form__label {
 			order: -1;
 			margin-right: fn.spacing();
 			font-size: font.$text-m;
@@ -28,7 +28,7 @@
 			align-items: flex-start;
 			justify-content: flex-start;
 
-			label {
+			.c-form__label {
 				margin: {
 					right: 0;
 					bottom: fn.spacing(.5);
