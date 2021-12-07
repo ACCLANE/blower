@@ -22,6 +22,7 @@
 	transition: opacity transition.$speed-slow;
 	color: var(--color-text);
 	z-index: 10;
+	filter: drop-shadow(2px 4px 6px rgba(0,0,0,.1));
 
 	&::after,
 	&::before {
@@ -141,5 +142,9 @@
 
 	&.is-active {
 		--opacity: 1;
+	}
+
+	&__wrapper {
+		position: relative;
 	}
 }
