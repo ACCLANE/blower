@@ -146,5 +146,9 @@
 
 	&__wrapper {
 		position: relative;
+
+		&.has-auto-width {
+			width: max-content;
+		}
 	}
 }
