@@ -34,6 +34,9 @@ $alert-types: (
 	border: var(--width-border) var(--style-border) var(--color-border);
 	background-color: var(--color-background);
 	font-size: var(--size-font);
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-inner-vertical);
 
 	@if fn.global-or-local(global-config.$rounded, $rounded) {
 		border-radius: base.$corner-radius;
@@ -55,10 +58,6 @@ $alert-types: (
 		&:hover {
 			text-decoration: none;
 		}
-	}
-
-	&__icon {
-		margin-right: var(--spacing-inner-vertical);
 	}
 
 	@if s-list.index($alert-types, 'primary') {
