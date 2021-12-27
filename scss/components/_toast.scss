@@ -47,16 +47,16 @@ $toast-types: (
 	}
 
 	&__close {
-		--color-border: transparent;
-		--color-background: transparent;
+		//--color-border: transparent;
+		//--color-background: transparent;
 		--spacing-inner-vertical: 0;
-		--size-font: #{font.$text-s};
+		//--size-font: #{font.$text-s};
 
-		&:active {
-			--color-active-text: #{color.$link-default};
-			--color-active-background: transparent;
-			--color-active-border: transparent;
-		}
+		//&:active {
+		//	--color-active-text: #{color.$link-default};
+		//	--color-active-background: transparent;
+		//	--color-active-border: transparent;
+		//}
 	}
 
 	&__body {
@@ -129,6 +129,20 @@ $toast-types: (
 		}
 	}
 
+	&[class*='is-type-'] {
+		--width-border: 7px;
+		--color-border: #0AF;
+
+		border-left: var(--width-border) solid var(--color-border);
+
+		&.is-type-success {
+			--color-border: #0A0;
+		}
+
+		&.is-type-danger {
+			--color-border: #A00;
+		}
+	}
 
 }
 

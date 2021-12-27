@@ -1,0 +1,26 @@
+.c-button-group {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+
+	.c-button {
+		margin: 0;
+
+		&:not(:last-of-type) {
+			margin-right: -1px;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+		&:not(:first-of-type) {
+			margin-left: -1px;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		&:not(:disabled):focus-visible {
+			position: relative; // Zeige den ganzen Button inklusive Box-Shadow
+		}
+	}
+}

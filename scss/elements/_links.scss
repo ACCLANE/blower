@@ -1,23 +1,27 @@
 @use '../variables/color';
 @use '../variables/transition';
 
-a:not([class]) {
-	color: var(--link-default);
+a {
 	transition: color transition.$speed-fast;
 
-	&:visited {
-		color: var(--link-visited);
-	}
+	&:not([class]) {
+		color: var(--link-default);
 
-	&:hover {
-		color: var(--link-hover);
-	}
+		&:visited {
+			color: var(--link-visited);
+		}
 
-	&:focus-visible {
-		color: var(--link-focus);
-	}
+		&:hover {
+			color: var(--link-hover);
+		}
 
-	&:active {
-		color: var(--link-active);
+		&:focus-visible {
+			color: var(--link-focus);
+		}
+
+		&:active {
+			color: var(--link-active);
+		}
 	}
 }
+

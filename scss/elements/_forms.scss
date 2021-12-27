@@ -60,6 +60,10 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 		}
 	}
 
+	textarea {
+		line-height: 1.35;
+	}
+
 	input[type='number' i],
 	input[type='email' i],
 	input[type='tel' i] {
@@ -70,7 +74,6 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 	}
 
 	button,
-	select,
 	input[type='submit' i],
 	input[type='button' i],
 	input[type='reset' i],
@@ -79,6 +82,17 @@ $icon-chevron-down: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' 
 
 		--spacing-inner-vertical: #{fn.spacing(.75)};
 		--spacing-inner-horizontal: calc(var(--spacing-inner-vertical) * 2);
+	}
+
+	select {
+		--spacing-inner-vertical: #{fn.spacing()};
+		--spacing-inner-horizontal: calc(var(--spacing-inner-vertical) * 2);
+		--size-font: 1rem;
+
+		padding: var(--spacing-inner-vertical) var(--spacing-inner-horizontal);
+		font-size: var(--size-font);
+		font-weight: 500;
+		cursor: pointer;
 	}
 
 	input[type='color' i] {
