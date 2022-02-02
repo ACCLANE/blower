@@ -46,6 +46,10 @@
 			--spacing-inner: #{fn.spacing()};
 		}
 
+		select {
+			padding-right: fn.spacing(3);
+		}
+
 		&.has-error {
 
 			.c-form__input,
