@@ -55,6 +55,7 @@ $button-types: (
 	transition-property: border-color, color, background-color, box-shadow;
 	transition-duration: transition.$speed-fast;
 	text-decoration: none;
+	text-align: center;
 	display: inline-block;
 
 	@if fn.global-or-local(global-config.$rounded, $rounded) {
