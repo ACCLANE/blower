@@ -47,6 +47,7 @@ $button-types: (
 	border: var(--width-border) var(--style-border) var(--color-border);
 	background-color: var(--color-background);
 	font-size: var(--size-font);
+	line-height: 1.15;
 	font-family: font.$primary;
 	font-weight: 500;
 	box-shadow: 0 0 0 2px transparent;
