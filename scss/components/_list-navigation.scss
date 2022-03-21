@@ -16,14 +16,14 @@
 		--spacing-inner-vertical: calc(#{fn.spacing(1.5)} / 1.25);
 	}
 
-	color: #FFF;
+	color: currentColor;
 	margin: {
 		left: fn.negate(var(--spacing-inner-horizontal));
 		right: fn.negate(var(--spacing-inner-horizontal));
 	};
 
 	&__link {
-		--color-link-text: #FFF;
+		--color-link-text: currentColor;
 		--color-link-background: transparent;
 
 		display: block;
